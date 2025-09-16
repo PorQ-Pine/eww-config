@@ -28,9 +28,7 @@
 (defpoll calendar_month :interval "10h" "date '+%m")
 (defpoll calendar_year :interval "10h" "date '+%Y'")
 
-(defpoll pfp :interval "1s" "~/.config/eww/scripts/pfp.sh")
 (defpoll username :interval "1s" "~/.config/eww/scripts/user.sh")
 
 (defpoll bluetooth_state :interval "1s" "~/.config/eww/scripts/bluetooth state")
-(defpoll redshift_state :interval "1s" "~/.config/eww/scripts/redshift state")
 (defpoll mic_status :interval "1s" "~/.config/eww/scripts/mic status")

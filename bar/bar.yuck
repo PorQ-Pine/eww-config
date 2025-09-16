@@ -1,19 +1,11 @@
 (defwidget launcher []
   (button :class "launcherbox"
-    :onclick "~/.config/eww/scripts/exec rofi -show drun"
+    ; Server needs to be running! Otherwise times out
+    ; nwg-drawer -r -wm niri msg action spawn --
+    :onclick "nwg-drawer"
     ""
   )
 )
-
-(defwidget workspaces []
-  (box :class "workspacesbox"
-    :orientation "h"
-    :space-evenly false
-    :valign "center"
-    (literal :content "${workspaces}")
-  )
-)
-(deflisten workspaces "~/.config/eww/scripts/workspaces")
 
 (defwidget left []
   (box :class "left"
@@ -21,7 +13,6 @@
     :space-evenly false
     :halign "start"
     (launcher)
-    (workspaces)
   )
 )
 
