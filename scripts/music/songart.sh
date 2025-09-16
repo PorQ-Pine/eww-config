@@ -19,7 +19,7 @@ get_song_art () {
   elif [[ -n $ART_FROM_BROWSER ]]; then
     cp $ART_FROM_BROWSER $TMP_TEMP_PATH
   else
-    cp $HOME/.config/dk/eww/assets/fallback.png $TMP_TEMP_PATH
+    cp $HOME/.config/eww/assets/fallback.png $TMP_TEMP_PATH
   fi
 
   # cp $TMP_TEMP_PATH $TMP_COVER_PATH

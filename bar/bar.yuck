@@ -1,6 +1,6 @@
 (defwidget launcher []
   (button :class "launcherbox"
-    :onclick "~/.config/dk/eww/scripts/exec rofi -show drun"
+    :onclick "~/.config/eww/scripts/exec rofi -show drun"
     ""
   )
 )
@@ -13,7 +13,7 @@
     (literal :content "${workspaces}")
   )
 )
-(deflisten workspaces "~/.config/dk/eww/scripts/workspaces")
+(deflisten workspaces "~/.config/eww/scripts/workspaces")
 
 (defwidget left []
   (box :class "left"
@@ -29,7 +29,7 @@
   (box :class "bardatebox"
     :orientation "h"
     :space-evenly true
-    (button :onclick "eww -c ~/.config/dk/eww open --toggle date" date)
+    (button :onclick "eww -c ~/.config/eww open --toggle date" date)
   )
 )
 
@@ -45,13 +45,13 @@
 
 (defwidget powerbutton []
   (button :class "powerbutton"
-    :onclick "eww -c ~/.config/dk/eww open-many --toggle powermenu-clickhandler powermenu"
+    :onclick "eww -c ~/.config/eww open-many --toggle powermenu-clickhandler powermenu"
     "󰤆"
   )
 )
 
 (defwidget actionsbox []
-  (button :class "actionsbox" :onclick "eww -c ~/.config/dk/eww open --toggle actions"
+  (button :class "actionsbox" :onclick "eww -c ~/.config/eww open --toggle actions"
     (box :orientation "h"
       :space-evenly true
       :spacing 20

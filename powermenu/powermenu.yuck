@@ -16,7 +16,7 @@
 
 (defwidget powermenu-clickhandler []
   (button :class "powermenu-clickhandler"
-          :onclick "eww -c ~/.config/dk/eww close powermenu powermenu-clickhandler"
+          :onclick "eww -c ~/.config/eww close powermenu powermenu-clickhandler"
     ""
   )
 )

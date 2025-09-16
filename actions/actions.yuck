@@ -50,7 +50,7 @@
            :orientation "h"
            :space-evenly true
         (sysblock :icon "${bluetooth_state == 'on' ? '' : ''}"
-                  :onclick "~/.config/dk/eww/scripts/bluetooth toggle"
+                  :onclick "~/.config/eww/scripts/bluetooth toggle"
                   :active "${bluetooth_state == 'on' ? true : false}"
                   :label "Bluetooth")
       )
@@ -58,7 +58,7 @@
            :orientation "h"
            :space-evenly true
         (sysblock :icon "${network_radio == 'on' ? '󰲛' : '󰛳'}"
-                  :onclick "~/.config/dk/eww/scripts/network.sh toggle-radio"
+                  :onclick "~/.config/eww/scripts/network.sh toggle-radio"
                   :active "${network_radio == 'on' ? false : true}"
                   :label "Airplane")
       )
@@ -70,7 +70,7 @@
            :orientation "h"
            :space-evenly true
         (sysblock :icon "${volume_icon}"
-                  :onclick "~/.config/dk/eww/scripts/volume.sh toggle-muted"
+                  :onclick "~/.config/eww/scripts/volume.sh toggle-muted"
                   :active "${is_muted == 'yes' ? false : true}"
                   :label "Volume")
       )
@@ -78,7 +78,7 @@
            :orientation "h"
            :space-evenly true
         (sysblock :icon "${mic_status == 'no' ? '' : ''}"
-                  :onclick "~/.config/dk/eww/scripts/mic toggle"
+                  :onclick "~/.config/eww/scripts/mic toggle"
                   :active "${mic_status == 'yes' ? true : false}"
                   :label "Micro")
       )
@@ -98,7 +98,7 @@
             volume_icon
       )
       (scale :value volume_value
-             :onchange "~/.config/dk/eww/scripts/volume.sh set {}"
+             :onchange "~/.config/eww/scripts/volume.sh set {}"
              :min 0
              :max 101)
     )
@@ -109,7 +109,7 @@
             br_icon
       )
       (scale :value br
-             :onchange "~/.config/dk/eww/scripts/brightness.sh set {}"
+             :onchange "~/.config/eww/scripts/brightness.sh set {}"
              :min 0
              :max 101)
     )
@@ -146,19 +146,19 @@
          :space-evenly true
       (button :valign "start"
               :halign "center"
-              :onclick "~/.config/dk/eww/scripts/music/control.sh prev"
+              :onclick "~/.config/eww/scripts/music/control.sh prev"
               :class "previousbutton"
         "󰒮"
       )
       (button :valign "center"
               :halign "center"
-              :onclick "~/.config/dk/eww/scripts/music/control.sh play-pause"
+              :onclick "~/.config/eww/scripts/music/control.sh play-pause"
               :class "pausebutton"
         "${music_status == 'Playing' ? '' : ''}"
       )
       (button :valign "end"
               :halign "center"
-              :onclick "~/.config/dk/eww/scripts/music/control.sh next"
+              :onclick "~/.config/eww/scripts/music/control.sh next"
               :class "nextbutton"
         "󰒭"
       )
