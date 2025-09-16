@@ -1,0 +1,20 @@
+.powermenu {
+  background-color: $bg;
+  color: $fg;
+  padding: 20px;
+  font-size: 70px;
+  border-radius: 4px;
+  button {
+    border-radius: 12px;
+    .content {
+      border-radius: 4px;
+      padding: 0px 15px 0px 5px;
+    }
+  }
+  .shutdown { color: $fg; }
+  .reboot { color: $fg; }
+}
+
+.powermenu-clickhandler {
+  background-color: transparent;
+}

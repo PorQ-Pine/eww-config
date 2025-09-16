@@ -1,0 +1,50 @@
+.bar {
+  background-color: $bg;
+  color: $fg;
+}
+
+.launcherbox {
+  color: $fg;
+  background-color: $bg;
+  margin: 6px;
+  margin-left: 14px;
+  border-radius: 7px;
+}
+
+// workspaces
+.ws {
+  // box properties
+  font-family: Iosevka Nerd Font;
+
+  // btn spacing
+  .btn { padding: 0px 7px; }
+
+  // ws dots colors
+  .i { color: $fg; } // unoccupied
+  .a { color: $fg; } // occupied
+  .A, .I { color: $fg; } // focused and focused without childs
+}
+
+.bardatebox {
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.actionsbox {
+  font-family: Iosevka Nerd Font;
+  font-size: x-large;
+  //padding: 2px 20px 2px 2px;
+  //border: 2px solid $fg;
+  //border-radius: 20px;
+  margin: 0px 20px 0px 20px;
+}
+
+.powerbutton {
+  color: $fg;
+  background-color: $bg;
+  font-size: x-large;
+  margin: 5px;
+  padding: 0px 14px 0px 8px;
+  border-radius: 7px;
+}
