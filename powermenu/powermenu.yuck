@@ -22,7 +22,7 @@
 )
 
 (defwindow powermenu-clickhandler
-  :monitor 1
+  :monitor 0
   :geometry (geometry :x "0px"
                       :y "0px"
                       :width "100%"
@@ -32,7 +32,7 @@
 (powermenu-clickhandler))
 
 (defwindow powermenu
-  :monitor 1
+  :monitor 0
   :geometry (geometry :x "0px"
                       :y "0px"
                       :width "30%"

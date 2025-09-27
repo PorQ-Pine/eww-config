@@ -75,7 +75,7 @@
 )
 
 (defwindow bar
-  :monitor 1
+  :monitor 0
   :geometry (geometry :x "0px"
     :y "0px"
     :width "100%"

@@ -47,7 +47,7 @@
 )
 
 (defwindow date
-  :monitor 1
+  :monitor 0
   :geometry (geometry :x "0px"
                       :y "46px"
                       :width "10px" ; automatically generated

@@ -194,7 +194,7 @@
 )
 
 (defwindow actions
-  :monitor 1
+  :monitor 0
   :geometry (geometry :x "-6px"
                       :y "46px"
                       :width "320px"
