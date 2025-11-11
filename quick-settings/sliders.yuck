@@ -5,7 +5,7 @@
     (box :orientation "h" :class "volume-control-center" :space-evenly false
       (volume_scale)
       (button :class "volume-slider-button ${volume == 'muted' ? 'active' : ''}" :onclick "pamixer -t" "󰝟")
-      (button :class "volume-arrow" :onclick "scripts/customtoggle.sh control_center & pwvucontrol &" "󰅂")
+      (button :class "volume-arrow" :onclick "scripts/customtoggle.sh control_center & pavucontrol &" "󰅂")
     )
     (box :orientation "h" :class "brightness-control-center" :space-evenly false
       (brightness_scale)
