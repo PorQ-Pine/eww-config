@@ -17,12 +17,12 @@
       (powermenu_entry    :label "Reboot"
         :icon "󰜉"
       :onclick "systemctl reboot")
-      (powermenu_entry    :label "Lock"
-        :icon ""
-      :onclick "scripts/customtoggle.sh power_menu & ~/Documents/scripts/niri/lock.sh &")
-      (powermenu_entry    :label "Sign out"
-        :icon "󰗼"
-      :onclick "/home/kitkat/Documents/scripts/niri/logout.sh")
+      ;(powermenu_entry    :label "Lock"
+      ;  :icon ""
+      ;:onclick "")
+      ;(powermenu_entry    :label "Sign out"
+      ;  :icon "󰗼"
+      ;:onclick "")
       (powermenu_entry    :label "Cancel"
         :icon "󰅖"
       :onclick "scripts/customtoggle.sh power_menu &")
