@@ -1,10 +1,11 @@
 window.date {
-  background-color: $white;
+  background-color: transparent;
+  box-shadow: 0 0 0 0 transparent;
 }
 
 .date {
   @include window;
-  color: transparent;
+  color: $white;
 }
 
 .timebox {
