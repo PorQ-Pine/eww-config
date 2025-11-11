@@ -6,7 +6,7 @@
 
 ; Windows
 (defwindow bar []
-  :monitor '["<primary>", "DP-1", "eDP-1"]'
+  :monitor '["0"]'
   :geometry (geometry
     :y "0px"
     :width "100%"
@@ -18,7 +18,7 @@
   (bar)
 )
 (defwindow date
-  :monitor '["<primary>", "DP-1", "eDP-1"]'
+  :monitor '["0"]'
   :stacking "overlay"
   :geometry (geometry :x "0px"
     :y "20px"
@@ -28,7 +28,7 @@
 
 
 (defwindow control_center
-  :monitor '["<primary>", "DP-1", "eDP-1"]'
+  :monitor '["0"]'
   :stacking "overlay"
   :geometry (geometry
     :anchor "top right"
@@ -40,7 +40,7 @@
 )
 
 (defwindow power_menu
-  :monitor '["<primary>", "DP-1", "eDP-1"]'
+  :monitor '["0"]'
   :stacking "overlay"
   :geometry (geometry
     :anchor "center"
@@ -51,7 +51,7 @@
 )
 
 (defwindow profile_selector
-  :monitor '["<primary>", "DP-1", "eDP-1"]'
+  :monitor '["0"]'
   :stacking "overlay"
   :geometry (geometry
     :anchor "center"
@@ -343,9 +343,8 @@
         :text {brightness < 33 ? "󰃞" : brightness < 67 ? "󰃟" : "󰃠"}
       )
       (revealer
-        :transition "slideleft"
+        :transition "none"
         :reveal indicator_brig_hover
-        :duration {ANIM_DURATION - 200}
         (label
           :class "icon-text"
           :text {brightness + "%"}
@@ -373,9 +372,8 @@
         :text {volume == "muted" ? " 󰸈" : volume < 33 ? "󰕿" : volume < 67 ? "󰖀" : "󰕾"}
       )
       (revealer
-        :transition "slideleft"
+        :transition "none"
         :reveal indicator_volume_hover
-        :duration {ANIM_DURATION - 200}
         (label
           :class "icon-text"
           :text {volume == "muted" ? "muted" : volume + "%"}

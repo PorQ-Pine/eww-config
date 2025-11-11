@@ -5,7 +5,7 @@
 (include "quick-settings/user.yuck")
 
 (defwidget control_center []
-  (revealer :transition "slidedown" :reveal {open_control_center} :duration {ANIM_DURATION}
+  (revealer :transition "none" :reveal {open_control_center}
     (box :orientation "v" :space-evenly false
       (box :orientation "v" :space-evenly false :class "control-center"
         (user)

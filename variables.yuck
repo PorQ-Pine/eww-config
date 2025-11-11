@@ -1,6 +1,6 @@
 ; VARS
 
-(defvar display "DP-1")
+(defvar display "HDMI-A-1")
 
 (defvar open_control_center false)
 (defvar open_date false)
@@ -8,7 +8,6 @@
 (defvar open_profile_selector false)
 (defvar indicator_brig_hover false)
 (defvar indicator_volume_hover false)
-(defvar ANIM_DURATION "500ms")
 
 (defvar notifications_data "{\"paused\": false, \"notifications\": []}")
 

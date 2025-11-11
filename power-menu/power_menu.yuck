@@ -8,7 +8,7 @@
 )
 
 (defwidget powermenu []
-  (revealer :transition "crossfade" :reveal {open_power_menu} :duration {ANIM_DURATION}
+  (revealer :transition "none" :reveal {open_power_menu}
     
     (box :orientation "h" :space-evenly true :valign "center" :halign "center" :class "powermenu-box"
       (powermenu_entry    :label "Power off"

@@ -1,5 +1,5 @@
 (defwidget music []
-    (revealer :transition "slideup" :reveal {mpris == "{}" ? false : mpris.name == "" ? false : true} :duration {ANIM_DURATION}
+    (revealer :transition "none" :reveal {mpris == "{}" ? false : mpris.name == "" ? false : true}
         (box :orientation "v" :class "music" :space-evenly false
             (box :orientation "h" :space-evenly false
                 (box :orientation "h" :space-evenly false :class "music-image" :style "background-image: url('${mpris.artUrl}');")

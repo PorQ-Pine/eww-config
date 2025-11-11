@@ -8,7 +8,7 @@
 )
 
 (defwidget profileselector []
-  (revealer :transition "crossfade" :reveal {open_profile_selector} :duration {ANIM_DURATION}
+  (revealer :transition "none" :reveal {open_profile_selector}
     
     (box :orientation "h" :space-evenly true :valign "center" :halign "center" :class "powermenu-box"
       (profileselector_entry    :label "Default"
