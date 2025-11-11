@@ -81,7 +81,7 @@
 )
 
 ; Taskbar
-(deflisten taskbar :initial "[]" "/mnt/data/git/eww-niri-toolbar/target/release/eww-niri-taskbar")
+(deflisten taskbar :initial "[]" "eww-niri-taskbar")
 
 (defwidget taskbar []
   (scroll :hscroll true :hexpand true :class "taskbar-scroll"
@@ -182,60 +182,16 @@
 )
 
 (defwidget brightness_icon []
-  (eventbox
-    :class "expandable-icon"
-    :onscroll "brightnessctl set $(if [ {} = up ]; then echo +1%; else echo 1%-; fi) &"
-    :onhover "eww update indicator_brig_hover=true"
-    :onhoverlost "eww update indicator_brig_hover=false"
-    :cursor "hand2"
-    (box
-      :class "expandable-icon-brigh-box"
-      :orientation "h"
-      :gap 0
-      (label
-        :text {brightness < 33 ? "󰃞" : brightness < 67 ? "󰃟" : "󰃠"}
-      )
-      (revealer
-        :transition "none"
-        :reveal indicator_brig_hover
-        (label
-          :class "icon-text"
-          :text {brightness + "%"}
-          :justify "right"
-          :font-size 0
-          :bold true
-        )
-      )
-    )
+  (label
+    :class "indicator-brigh-icon"
+    :text {brightness < 33 ? "󰃞" : brightness < 67 ? "󰃟" : "󰃠"}
   )
 )
 
 (defwidget volume_icon []
-  (eventbox
-    :class "expandable-icon"
-    :onscroll "scripts/volume-scroll.sh {}"
-    :onhover "eww update indicator_volume_hover=true"
-    :onhoverlost "eww update indicator_volume_hover=false"
-    :cursor "hand2"
-    (box
-      :class "expandable-icon-vol-box"
-      :orientation "h"
-      :gap 0
-      (label
-        :text {volume == "muted" ? " 󰸈" : volume < 33 ? "󰕿" : volume < 67 ? "󰖀" : "󰕾"}
-      )
-      (revealer
-        :transition "none"
-        :reveal indicator_volume_hover
-        (label
-          :class "icon-text"
-          :text {volume == "muted" ? "muted" : volume + "%"}
-          :justify "right"
-          :font-size 0
-          :bold true
-        )
-      )
-    )
+  (label
+    :class "indicator-volume-icon"
+    :text {volume == "muted" ? " 󰸈" : volume < 33 ? "󰕿" : volume < 67 ? "󰖀" : "󰕾"}
   )
 )
 
