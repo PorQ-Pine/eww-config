@@ -1,27 +1,27 @@
 @mixin window {
-    background-color: $base;
+    background-color: $white;
     border-radius: 1.5rem;
     padding: 1rem;
-    box-shadow: 0 1px 3px 2px $crust;
+    box-shadow: 0 1px 3px 2px $black;
     margin: 1rem;
 }
 
 tooltip {
-    background: transparent;
+    background: $white;
 }
 
 tooltip label {
-    background-color: $surface0;
-    color: $text;
+    background-color: $white;
+    color: $black;
     border-radius: 8px;
     padding: 6px 10px;
 }
 
 menu {
-    background-color: $surface0;
+    background-color: $white;
     border-radius: 1rem;
     padding: 0.75rem;
-    color: $text;
+    color: $black;
     font-size: 1rem;
 }
 
@@ -30,11 +30,6 @@ menu>menuitem {
     transition: 0.3s;
     border-radius: 1rem;
 }
-
-menu>menuitem:hover {
-    background-color: mix($surface0, $subtext1, 70%);
-}
-
 
 scrollbar {
   background-color: transparent;
@@ -52,15 +47,7 @@ scrollbar slider {
   border-radius: 9999px;
     margin: 0;
   padding: 0;
-  background-color: rgba(239, 241, 245, 0.5);
-}
-
-scrollbar slider:hover {
-  background-color: rgba(239, 241, 245, 0.7);
-}
-
-scrollbar slider:active {
-  background-color: #eff1f5;
+  background-color: $white;
 }
 
 scrollbar button {

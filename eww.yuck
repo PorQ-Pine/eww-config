@@ -2,7 +2,6 @@
 (include "quick-settings/control_center.yuck")
 (include "calendar/calendar.yuck")
 (include "power-menu/power_menu.yuck")
-(include "profile-selector/profile_selector.yuck")
 
 ; Windows
 (defwindow bar []
@@ -25,7 +24,6 @@
   :anchor "center top")
   :namespace "eww"
   (date))
-
 
 (defwindow control_center
   :monitor '["0"]'
@@ -50,17 +48,6 @@
   (powermenu)
 )
 
-(defwindow profile_selector
-  :monitor '["0"]'
-  :stacking "overlay"
-  :geometry (geometry
-    :anchor "center"
-    :width "100%"
-  :height "100%")
-  :namespace "eww-blur"
-  (profileselector)
-)
-
 ; Bar
 (defwidget bar []
   (box
@@ -71,8 +58,6 @@
     ;; left
     (box :halign "start" :orientation "h" :space-evenly false :spacing 2
       (launcher)
-      (usage-indicator)
-      (temp-indicator)
     )
     
     ;; center
@@ -86,139 +71,12 @@
   )
 )
 
-
 ; App launcher
 (defwidget launcher []
   (button
     :class "launcher"
-    :onclick "$HOME/Documents/scripts/niri/app-launcher.sh &"
+    :onclick {launcher_command}
     " "
-  )
-)
-
-; App launcher
-(defwidget launcher []
-  (button
-    :class "launcher"
-    :onclick "$HOME/Documents/scripts/niri/app-launcher.sh &"
-    " "
-  )
-)
-
-; Usage indicators
-(defwidget usage-indicator []
-  (box
-    :class "usage-indicators"
-    :space-evenly false
-    (cpu_icon)
-    (gpu_icon)
-    (memory_icon)
-  )
-)
-
-(defwidget cpu_icon []
-  (box
-    :class "indicator-cpu-icon"
-    :space-evenly false
-    :spacing 10
-    (label :text "")
-    (label
-      :class "icon-usage-text"
-      :text {round(EWW_CPU.avg, 1) + "%"}
-    )
-  )
-)
-
-(defwidget gpu_icon []
-  (box
-    :class "indicator-gpu-icon"
-    :space-evenly false
-    :spacing 10
-    (label :text "")
-    (label
-      :class "icon-usage-text"
-      :text {round(gpu_usage, 1) + "%"}
-    )
-  )
-)
-
-(defwidget memory_icon []
-  (box
-    :class "indicator-memory-icon"
-    :space-evenly false
-    :spacing 15
-    (box
-      :halign "center"
-      :valign "center"
-      :space-evenly false
-      :spacing 10
-      (label :text "")
-      (label
-        :class "icon-usage-text"
-        :text {round(EWW_RAM.used_mem / (1024 * 1024 * 1024), 1) + "G"}
-      ))
-    (box
-      :orientation "h"
-      :halign "center"
-      :valign "center"
-      :space-evenly false
-      :spacing 10
-      (label :text "")
-      (label
-        :class "icon-usage-text"
-        :text {round(((EWW_RAM.total_swap - EWW_RAM.free_swap)  / (1024 * 1024 * 1024)), 1) + "G"}
-      ))
-  ))
-
-; temp indicators
-(defwidget temp-indicator []
-  (eventbox :onclick "scripts/customtoggle.sh profile_selector"
-    :class "temp-indicators"
-    (box
-      :space-evenly false
-      (cpu_temp_icon)
-      (gpu_temp_icon)
-      (profile-indicator)
-    )
-  )
-)
-
-(defwidget cpu_temp_icon []
-  (box
-    :class "indicator-cpu-temp"
-    :space-evenly false
-    :spacing 10
-    (label :text "")
-    (label
-      :class "icon-usage-text-temp"
-      :text {round(EWW_TEMPS.CORETEMP_PACKAGE_ID_0, 1) + " C"}
-    )
-  )
-)
-
-(defwidget gpu_temp_icon []
-  (box
-    :class "indicator-gpu-temp"
-    :space-evenly false
-    :spacing 10
-    (label :text "")
-    (label
-      :class "icon-usage-text-temp"
-      :text {round(gpu_temp, 1) + " C"}
-    )
-  )
-)
-
-(defwidget profile-indicator []
-  (box
-    :class "profile-indicator"
-    :space-evenly false
-    :spacing 10
-    (label :text "󰈐")
-    (label
-      :class "icon-usage-text-temp"
-      :text {profile}
-    )
   )
 )
 
@@ -262,17 +120,12 @@
 )
 
 ; Date callendar
-
 (defwidget date-indicator []
   (button
     :class "date-indicator"
     :onclick "scripts/customtoggle.sh date &"
-    (label :text {formattime(EWW_TIME, "%A %d.%m")}
+    (label :text {formattime(EWW_TIME, "%d.%m.20%y")}
       :class "date-indicator-text"
-      :wrap true
-      :limit-width 1
-      :lines 2
-      :wrap-mode: "word"
     :justify "center")
   )
 )

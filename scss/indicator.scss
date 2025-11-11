@@ -1,49 +1,36 @@
 .indicator-date-wrapper {
     border-radius: 1rem;
     /* rounds the outer corners */
-    background-color: $base;
-}
-
-.indicator-date-wrapper:hover {
-    background-color: mix($base, $subtext1, 70%);
+    background-color: $black;
 }
 
 .indicator {
-    background-color: $base;
+    background-color: $black;
     border-radius: 1rem;
     padding: 0 0.5rem;
     margin-right: 0;
     transition: 0.3s;
 }
 
-.indicator:hover {
-    background-color: mix($base, $subtext1, 70%);
-}
-
 .date-indicator {
     font-size: 0.85rem;
-    background-color: $base;
+    background-color: $black;
     border-radius: 1rem;
     padding: 0 0.5rem;
     margin: 0;
     transition: 0.3s;
 }
 
-.date-indicator:hover {
-    background-color: mix($base, $subtext1, 70%);
-}
-
 .date-indicator-text {
     padding: 0 0.2rem;
 }
-
 
 .indicator-icons {
     border-radius: 1rem;
     padding: 0rem 0rem;
     margin: 0 0rem;
-    background-color: $pink;
-    color: $surface0;
+    background-color: $white;
+    color: $black;
 }
 
 .indicator-icon {

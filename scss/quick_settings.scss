@@ -1,23 +1,15 @@
 .quick_settings_button {
     transition: 500ms;
-    background-color: $surface0;
-    color: $text;
+    background-color: $white;
+    color: $black;
     border-radius: 1.5rem;
     padding: 0.75rem;
     font-size: 1.05rem;
 }
 
-.quick_settings_button:hover {
-    background-color: mix($surface0, $subtext1, 70%);
-}
-
 .quick_settings_button_toggled {
-    background-color: $mauve;
-    color: $base;
-}
-
-.quick_settings_button_toggled:hover {
-    background-color: mix($mauve, $text, 70%);
+    background-color: $white;
+    color: $black;
 }
 
 .quick_settings_box {
@@ -34,11 +26,11 @@
 
 .quick-settings-state {
     font-size: 0.9rem;
-    color: $subtext1;
+    color: $black;
 }
 
 .quick-settings-state-enabled {
-    color: $surface0;
+    color: $black;
 }
 
 .left-top-plite {

@@ -1,7 +1,5 @@
 ; VARS
 
-(defvar display "HDMI-A-1")
-
 (defvar open_control_center false)
 (defvar open_date false)
 (defvar open_power_menu true)
@@ -11,6 +9,9 @@
 
 (defvar notifications_data "{\"paused\": false, \"notifications\": []}")
 
+; YES VARS
+(defvar launcher_command "nwg-drawer")
+
 ; POLLS
 
 (defpoll calendar_day :interval "10h" "date '+%d'")
@@ -18,13 +19,6 @@
 (defpoll calendar_year :interval "10h" "date '+%Y'")
 
 (defpoll uptime :interval "60s" "awk '{print int($1/3600)\"h \"int(($1%3600)/60)\"m\"}' /proc/uptime")
-
-(defpoll gpu_usage :interval "2s" "nvidia-smi --format=csv,noheader,nounits --query-gpu=utilization.gpu")
-(defpoll gpu_temp :interval "2s" "nvidia-smi --format=csv,noheader,nounits --query-gpu=temperature.gpu")
-
-(defpoll profile :interval "5s" "scripts/update-tailor.sh")
-
-(defpoll auto-idle :interval "30s" "/home/kitkat/Documents/scripts/niri/check-for-swayidle.sh")
 
 ; LISTENS
 

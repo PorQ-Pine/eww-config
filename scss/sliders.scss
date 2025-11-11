@@ -1,38 +1,18 @@
 // generic
 
 @mixin slider-button {
-    background-color: $surface0;
-    color: $text;
+    background-color: $white;
+    color: $black;
     margin-left: 0.5rem;
     padding: 0.5rem;
     font-size: 1.5rem;
     min-width: 2.25rem;
     border-radius: 2rem;
     transition: 0.3s;
-
-    &.active {
-        background-color: $mauve;
-        color: $base;
-    }
-
-    &.active:hover {
-        background-color: mix($mauve, $text, 70%);
-    }
-
-    &:hover {
-        background-color: mix($surface0, $subtext1, 70%);
-    }
 }
 
 .scale trough {
-    background-color: $surface0;
-    border-radius: 1rem;
-    min-height: 2.25rem;
-}
-
-
-.scale trough highlight {
-    background-color: $mauve;
+    background-color: $white;
     border-radius: 1rem;
     min-height: 2.25rem;
 }
@@ -42,17 +22,16 @@
     font-size: 1.5rem;
 
     &.less {
-        color: $text;
+        color: $black;
     };
 
     &.more {
-        color: $base;
+        color: $black;
     };
 }
 
 
 // brightness
-
 .brightness-control-center {
     margin-top: 1rem;
     margin-right: 2.7rem;
@@ -65,22 +44,18 @@
 }
 
 
-
+// volume
 .volume-control-center {
     margin-top: 1rem;
 }
 
 .volume-arrow {
-    color: $mauve;
+    color: $black;
     margin-left: 0.5rem;
     font-size: 2rem;
     min-width: 2.25rem;
     border-radius: 2rem;
     transition: 0.3s;
-}
-
-.volume-arrow:hover {
-    background-color: mix($base, $text, 70%);
 }
 
 .volume-slider-button {

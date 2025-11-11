@@ -6,7 +6,6 @@
     )
     (box :orientation "h" :space-evenly true 
       (bluetooth)
-      (auto-lock)
     )
   )
 )
@@ -63,15 +62,5 @@
     :icon "󰍷"
     :label "Do not disturb"
     :class "right-top-plite"
-  )
-)
-
-(defwidget auto-lock []
-  (quick_settings_button  :condition {auto-idle == false}
-    :action "/home/kitkat/Documents/scripts/niri/cycle-auto-lock.sh && eww update auto-idle=$(/home/kitkat/Documents/scripts/niri/check-for-swayidle.sh)"
-    :rightaction ""
-    :icon ""
-    :label "Auto lock"
-    :class "left-bottom-plite"
   )
 )
