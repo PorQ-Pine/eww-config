@@ -1,5 +1,8 @@
 .notifications-center {
     @include window;
+    border-color: $black;
+    border-width: 0.2rem;
+    border-style: solid;
 }
 
 .notification-box {

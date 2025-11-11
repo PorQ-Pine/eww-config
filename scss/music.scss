@@ -1,5 +1,8 @@
 .music {
     @include window;
+    border-color: $black;
+    border-width: 0.2rem;
+    border-style: solid;
 }
 
 .music-image {

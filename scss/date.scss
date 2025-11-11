@@ -6,6 +6,11 @@ window.date {
 .date {
   @include window;
   color: $white;
+  padding: 0rem;
+  margin: 0rem;
+  border-color: $black;
+  border-width: 0.2rem;
+  border-style: solid;
 }
 
 .timebox {
