@@ -5,6 +5,9 @@
 .notification-box {
     background-color: $white;
     color: $black;
+    border-color: $black;
+    border-width: 0.2rem;
+    border-style: solid;
     border-radius: 1rem;
     margin-top: 1rem;
 }
