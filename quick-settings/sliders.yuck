@@ -1,5 +1,4 @@
 ; main widget
-
 (defwidget sliders []
   (box :orientation "v" :class "sliders" :space-evenly false
     
@@ -10,13 +9,11 @@
     )
     (box :orientation "h" :class "brightness-control-center" :space-evenly false
       (brightness_scale)
-      (button :class "brigh-slider-button" :onclick "ddcutil setvcp 10 ${brightness} &" "󱄄")
     )
   )
 )
 
 ; brigntess
-
 (defwidget brightness_scale []
     (overlay :hexpand true
         (scale :min 0 :max 100  :value {brightness} :onchange "brightnessctl set {}% &" :class "scale")
@@ -25,7 +22,6 @@
 )
 
 ; volume
-
 (defwidget volume_scale []
     (overlay :hexpand true
         (scale :min 0 :max 100 :active {volume != "muted"} :value {volume == "muted" ? 0 : volume}  :onchange "pamixer --set-volume $(echo '{}' | awk '{printf \"%d\", $1}') &" :class "scale")

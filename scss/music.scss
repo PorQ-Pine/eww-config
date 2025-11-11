@@ -9,13 +9,18 @@
     min-height: 6rem;
     min-width: 6rem;
     border-radius: 1rem;
+    border-color: $black;
+    border-width: 0.2rem;
+    border-style: solid;
 }
 
 .music-text {
+    color: $black;
     margin-left: 1rem;
 }
 
 .music-title {
+    color: $black;
     font-size: 1.2rem;
 }
 
@@ -32,21 +37,7 @@
 }
 
 .music-action {
+    color: $black;
     font-size: 2rem;
     min-width: 3rem;
-}
-
-.music-scale {
-    margin-top: 1rem;
-}
-
-.music-scale trough {
-    background-color: $white;
-    border-radius: 1rem;
-    min-height: 0.5rem;
-}
-
-.music-strtime {
-    color: $black;
-    margin-top: 0.25rem;
 }

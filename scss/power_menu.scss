@@ -4,6 +4,9 @@
     padding-right: 2.5rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    border-color: $black;
+    border-width: 0.2rem;
+    border-style: solid;
 }
 
 .powermenu-entry {
@@ -13,15 +16,19 @@
 .powermenu-button {
     background-color: $white;
     border-radius: 1rem;
-    transition: 0.3s;
     padding: 3.25rem 4rem;
+    border-color: $black;
+    border-width: 0.2rem;
+    border-style: solid;
 }
 
 .powermenu-icon {
     font-size: 4rem;
+    color: $black;
 }
 
 .powermenu-text {
     margin-top: 0.5rem;
     font-size: 1.3rem;
+    color: $black;
 }

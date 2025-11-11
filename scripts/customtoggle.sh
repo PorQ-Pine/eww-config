@@ -2,7 +2,6 @@
 
 module="$1"
 state_var="open_${module}"
-ANIM_DURATION=0.5
 modules=(control_center date power_menu profile_selector)
 
 open_module() {
@@ -18,7 +17,6 @@ open_module() {
     done
 
     (
-      sleep $ANIM_DURATION
       for mod in "${modules[@]}"; do
         [[ "$mod" != "$module" ]] && eww close "$mod"
       done
@@ -30,7 +28,6 @@ close_module() {
   (
     eww update "$state_var=false"
     (
-      sleep $ANIM_DURATION
       eww close "$module"
     ) &
   ) &

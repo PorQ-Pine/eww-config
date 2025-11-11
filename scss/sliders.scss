@@ -1,5 +1,4 @@
 // generic
-
 @mixin slider-button {
     background-color: $white;
     color: $black;
@@ -8,11 +7,23 @@
     font-size: 1.5rem;
     min-width: 2.25rem;
     border-radius: 2rem;
-    transition: 0.3s;
+    border-color: $black;
+    border-width: 0.2rem;
+    border-style: solid;
 }
 
 .scale trough {
     background-color: $white;
+    color: $black;
+    border-radius: 1rem;
+    min-height: 2.25rem;
+    border-color: $black;
+    border-width: 0.2rem;
+    border-style: solid;
+}
+
+.scale trough highlight {
+    background-color: $black;
     border-radius: 1rem;
     min-height: 2.25rem;
 }
@@ -26,23 +37,15 @@
     };
 
     &.more {
-        color: $black;
+        color: $white;
     };
 }
-
 
 // brightness
 .brightness-control-center {
     margin-top: 1rem;
     margin-right: 2.7rem;
 }
-
-.brigh-slider-button {
-    @include slider-button;
-    padding: 0.5rem 0.4rem;
-    padding-right: 0.88rem;
-}
-
 
 // volume
 .volume-control-center {
@@ -55,7 +58,6 @@
     font-size: 2rem;
     min-width: 2.25rem;
     border-radius: 2rem;
-    transition: 0.3s;
 }
 
 .volume-slider-button {
