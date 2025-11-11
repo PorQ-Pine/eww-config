@@ -35,6 +35,36 @@ menu>menuitem {
   border-radius: 1rem;
 }
 
+check {
+  padding: 0.5rem;
+  margin: 0 1rem;
+  border-radius: 6px;
+  background-color: $white;
+  border-color: $black;
+  border-width: 0.2rem;
+  border-style: solid;
+}
+
+check:checked {
+  background-color: $black;
+  color: $white;
+}
+
+radio {
+  padding: 0.5rem;
+  margin: 0 1rem;
+  border-radius: 6px;
+  background-color: $white;
+  border-color: $black;
+  border-width: 0.2rem;
+  border-style: solid;
+}
+
+radio:checked {
+  background-color: $black;
+  color: $white;
+}
+
 scrollbar {
   background-color: $transparent;
   border: none;
