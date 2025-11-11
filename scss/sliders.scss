@@ -1,0 +1,89 @@
+// generic
+
+@mixin slider-button {
+    background-color: $surface0;
+    color: $text;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    min-width: 2.25rem;
+    border-radius: 2rem;
+    transition: 0.3s;
+
+    &.active {
+        background-color: $mauve;
+        color: $base;
+    }
+
+    &.active:hover {
+        background-color: mix($mauve, $text, 70%);
+    }
+
+    &:hover {
+        background-color: mix($surface0, $subtext1, 70%);
+    }
+}
+
+.scale trough {
+    background-color: $surface0;
+    border-radius: 1rem;
+    min-height: 2.25rem;
+}
+
+
+.scale trough highlight {
+    background-color: $mauve;
+    border-radius: 1rem;
+    min-height: 2.25rem;
+}
+
+.scale-icon {
+    margin-left: 0.75rem;
+    font-size: 1.5rem;
+
+    &.less {
+        color: $text;
+    };
+
+    &.more {
+        color: $base;
+    };
+}
+
+
+// brightness
+
+.brightness-control-center {
+    margin-top: 1rem;
+    margin-right: 2.7rem;
+}
+
+.brigh-slider-button {
+    @include slider-button;
+    padding: 0.5rem 0.4rem;
+    padding-right: 0.88rem;
+}
+
+
+
+.volume-control-center {
+    margin-top: 1rem;
+}
+
+.volume-arrow {
+    color: $mauve;
+    margin-left: 0.5rem;
+    font-size: 2rem;
+    min-width: 2.25rem;
+    border-radius: 2rem;
+    transition: 0.3s;
+}
+
+.volume-arrow:hover {
+    background-color: mix($base, $text, 70%);
+}
+
+.volume-slider-button {
+    @include slider-button;
+    padding-right: 0.8rem;
+}

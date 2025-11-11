@@ -1,0 +1,13 @@
+.bar-widget {
+    @include window;
+    padding: 0.3rem 1rem;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    margin-bottom: 0rem;
+    border-radius: 5rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: rgba($mantle, 0.2); // 0.5 is 50% opacity'
+    box-shadow: 0 0px 0px 0px $crust;
+}

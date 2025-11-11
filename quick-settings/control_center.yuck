@@ -1,0 +1,20 @@
+(include "quick-settings/sliders.yuck")
+(include "quick-settings/notifications.yuck")
+(include "quick-settings/quick_settings.yuck")
+(include "quick-settings/music.yuck")
+(include "quick-settings/user.yuck")
+
+(defwidget control_center []
+  (revealer :transition "slidedown" :reveal {open_control_center} :duration {ANIM_DURATION}
+    (box :orientation "v" :space-evenly false
+      (box :orientation "v" :space-evenly false :class "control-center"
+        (user)
+        (quick_settings)
+        (sliders)
+      )
+      (notifications)
+      (music)
+    )
+    
+  )
+)

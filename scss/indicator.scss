@@ -1,0 +1,84 @@
+.indicator-date-wrapper {
+    border-radius: 1rem;
+    /* rounds the outer corners */
+    background-color: $base;
+}
+
+.indicator-date-wrapper:hover {
+    background-color: mix($base, $subtext1, 70%);
+}
+
+.indicator {
+    background-color: $base;
+    border-radius: 1rem;
+    padding: 0 0.5rem;
+    margin-right: 0;
+    transition: 0.3s;
+}
+
+.indicator:hover {
+    background-color: mix($base, $subtext1, 70%);
+}
+
+.date-indicator {
+    font-size: 0.85rem;
+    background-color: $base;
+    border-radius: 1rem;
+    padding: 0 0.5rem;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.date-indicator:hover {
+    background-color: mix($base, $subtext1, 70%);
+}
+
+.date-indicator-text {
+    padding: 0 0.2rem;
+}
+
+
+.indicator-icons {
+    border-radius: 1rem;
+    padding: 0rem 0rem;
+    margin: 0 0rem;
+    background-color: $pink;
+    color: $surface0;
+}
+
+.indicator-icon {
+    margin: 0 0.35rem;
+    font-size: 1.3rem;
+}
+
+.indicator-net-icon {
+    margin: 0 0.5rem;
+    font-size: 1.3rem;
+}
+
+.indicator-bat-icon {
+    margin: 0 0rem;
+    padding-right: 1rem;
+    font-size: 1.3rem;
+}
+
+.indicator-dnd-icon {
+    margin: 0 0rem;
+    margin-left: 0.4rem;
+    font-size: 1.3rem;
+}
+
+
+.expandable-icon-vol-box {
+    padding-left: 1rem;
+    font-size: 1.3rem;
+}
+
+.expandable-icon-brigh-box {
+    font-size: 1.3rem;
+}
+
+.icon-text {
+    margin: 0 0.2rem;
+    font-size: 0.9rem;
+}

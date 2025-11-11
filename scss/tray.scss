@@ -1,0 +1,12 @@
+.tray_box {
+    background-color: $base;
+    border-radius: 1rem;
+    padding: 0 1.5rem;
+    margin: 0 0.5rem;
+    margin-right: 0;
+    transition: 0.3s;
+}
+
+.tray_box:hover {
+    background-color: mix($base, $subtext1, 70%);
+}

@@ -1,0 +1,34 @@
+.taskbar {
+    border-radius: 1rem;
+    margin: 0 1rem;
+    background-color: $mantle;
+}
+
+.workspace {
+    border-radius: 1rem;
+    padding: 0rem 0rem;
+    margin: 0 0rem;
+    background-color: $base;
+    color: $base;
+}
+
+.app_item {
+    margin: 0 0.1rem;
+    transition: 0.5s;
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    background-color: $base;
+
+    &.active {
+        background-color: $mauve;
+        color: $base;
+                transition: background-color 0.01s ease; // shorter transition
+
+    }
+
+    &:hover {
+        background-color: $mauve;
+        transition: background-color 0.01s ease; // shorter transition
+    }
+
+}

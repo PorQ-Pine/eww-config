@@ -1,0 +1,32 @@
+(defwidget powermenu_entry [label icon onclick]
+  (box :orientation "v" :space-evenly false :class "powermenu-entry"
+    (button :class "powermenu-button" :onclick {onclick}
+      (label :class "powermenu-icon" :text {icon})
+    )
+    (label :class "powermenu-text" :text {label})
+  )
+)
+
+(defwidget powermenu []
+  (revealer :transition "crossfade" :reveal {open_power_menu} :duration {ANIM_DURATION}
+    
+    (box :orientation "h" :space-evenly true :valign "center" :halign "center" :class "powermenu-box"
+      (powermenu_entry    :label "Power off"
+        :icon "󰐥"
+      :onclick "systemctl poweroff")
+      (powermenu_entry    :label "Reboot"
+        :icon "󰜉"
+      :onclick "systemctl reboot")
+      (powermenu_entry    :label "Lock"
+        :icon ""
+      :onclick "scripts/customtoggle.sh power_menu & ~/Documents/scripts/niri/lock.sh &")
+      (powermenu_entry    :label "Sign out"
+        :icon "󰗼"
+      :onclick "/home/kitkat/Documents/scripts/niri/logout.sh")
+      (powermenu_entry    :label "Cancel"
+        :icon "󰅖"
+      :onclick "scripts/customtoggle.sh power_menu &")
+      
+    )
+  )
+)
