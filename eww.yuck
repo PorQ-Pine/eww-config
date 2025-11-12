@@ -173,11 +173,11 @@
   (box :visible {EWW_BATTERY == "" ? false : true}
     :class "indicator-bat-icon"
     (label
-      :text {EWW_BATTERY.BAT0.status == "Charging" ? "" : EWW_BATTERY.BAT0.capacity > 90 ? "" : EWW_BATTERY.BAT0.capacity > 75 ? "" : EWW_BATTERY.BAT0.capacity > 50 ? "" : EWW_BATTERY.BAT0.capacity > 25 ? "" : ""}
+      :text {EWW_BATTERY.rk817-battery.status == "Charging" ? "" : EWW_BATTERY.rk817-battery.capacity > 90 ? "" : EWW_BATTERY.rk817-battery.capacity > 75 ? "" : EWW_BATTERY.rk817-battery.capacity > 50 ? "" : EWW_BATTERY.rk817-battery.capacity > 25 ? "" : ""}
     )
     (label
       :class "icon-text"
-    :text {EWW_BATTERY.BAT0.capacity + "%"})
+    :text {EWW_BATTERY.rk817-battery.capacity + "%"})
   )
 )
 
