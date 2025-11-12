@@ -3,7 +3,7 @@
 (include "calendar/calendar.yuck")
 (include "power-menu/power_menu.yuck")
 
-(defpoll battery_status_text :interval "1s" "scripts/battery_state.sh")
+(defpoll battery_status_text :interval "5s" "scripts/battery_state.sh")
 (defpoll battery_percentage_num :interval "5s" "scripts/battery_percentage.sh")
 
 ; Windows
