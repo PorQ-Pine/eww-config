@@ -1,9 +1,10 @@
 #!/bin/bash
 
+DEVICE="backlight_cool"
+PATH_BASE="/sys/class/backlight/${DEVICE}"
+
 print_brightness() {
-    cur=$(brightnessctl g)
-    max=$(brightnessctl m)
-    echo $((cur * 100 / max))
+    cat "${PATH_BASE}/actual_brightness"
 }
 
 print_brightness

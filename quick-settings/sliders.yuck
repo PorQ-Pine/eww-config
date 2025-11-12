@@ -8,16 +8,27 @@
       (button :class "volume-arrow" :onclick "eww close control_center & pavucontrol &" "󰅂")
     )
     (box :orientation "h" :class "brightness-control-center" :space-evenly false
-      (brightness_scale)
+      (brightness_scale_cool)
+    )
+    (box :orientation "h" :class "brightness-control-center" :space-evenly false
+      (brightness_scale_warm)
     )
   )
 )
 
 ; brigntess
-(defwidget brightness_scale []
+(defwidget brightness_scale_cool []
     (overlay :hexpand true
-        (scale :min 0 :max 100  :value {brightness} :onchange "brightnessctl set {}% &" :class 'scale ${brightness < 5 ? "less" : "more"}')
-        (label :class 'scale-icon ${brightness < 5 ? "less" : "more"}' :halign "start" :text {brightness < 33 ? " 󰃞" : brightness < 67 ? " 󰃟" : " 󰃠"})
+        (scale :min 0 :max 255  :value {brightness_cool} :onchange "echo {} > /sys/class/backlight/backlight_cool/brightness &" :class 'scale ${brightness_cool < 5 ? "less" : "more"}')
+        (label :class 'scale-icon ${brightness_cool < 5 ? "less" : "more"}' :halign "start" :text {brightness_cool < 85 ? " 󰃞" : brightness_cool < 170 ? " 󰃟" : " 󰃠"})
+    )
+)
+
+; brigntess warm
+(defwidget brightness_scale_warm []
+    (overlay :hexpand true
+        (scale :min 0 :max 255  :value {brightness_warm} :onchange "echo {} > /sys/class/backlight/backlight_warm/brightness &" :class 'scale ${brightness_warm < 5 ? "less" : "more"}')
+        (label :class 'scale-icon ${brightness_warm < 5 ? "less" : "more"}' :halign "start" :text {brightness_warm < 85 ? " 󰃞" : brightness_warm < 170 ? " 󰃟" : " 󰃠"})
     )
 )
 

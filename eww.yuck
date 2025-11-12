@@ -141,7 +141,6 @@
       (box :orientation "h" :space-evenly false :spacing 2
         (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-icons"
           (volume_icon)
-          (brightness_icon)
           (network_icon)
           (do-not-disturb_icon)
           (battery_icon))
@@ -182,13 +181,6 @@
       :class "icon-text"
       :text {battery_percentage_num + "%"}
     )
-  )
-)
-
-(defwidget brightness_icon []
-  (label
-    :class "indicator-brigh-icon"
-    :text {brightness < 33 ? "󰃞" : brightness < 67 ? "󰃟" : "󰃠"}
   )
 )
 
