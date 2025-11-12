@@ -12,7 +12,7 @@
     border-style: solid;
 }
 
-.scale trough {
+.scale.less trough {
     background-color: $white;
     color: $black;
     border-radius: 1rem;
@@ -22,14 +22,30 @@
     border-style: solid;
 }
 
-.scale trough highlight {
+.scale.less trough highlight {
     background-color: $black;
+    border-radius: 0.9rem;
+    min-width: 11px;
+}
+
+.scale.more trough {
+    background-color: $white;
+    color: $black;
     border-radius: 1rem;
+    min-height: 2.25rem;
+    border-color: $black;
+    border-width: 0.2rem;
+    border-style: solid;
+}
+
+.scale.more trough highlight {
+    background-color: $black;
+    border-radius: 0.9rem;
     min-height: 2.25rem;
 }
 
 .scale-icon {
-    margin-left: 0.75rem;
+    margin-left: 1rem;
     font-size: 1.5rem;
 
     &.less {

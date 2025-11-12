@@ -1,10 +1,8 @@
 .launcher {
-    background-color: $white;
-    color: $black;
-    border-radius: 1rem;
-    padding: 0 0.8rem;
-    margin: 0 0.6rem;
-    border-color: $black;
-    border-width: 0.15rem;
-    border-style: solid;
+  background-color: $white;
+  color: $black;
+  border-radius: 1rem;
+  padding: 0 0.8rem;
+  margin: 0 0.6rem;
+  border: 0.2rem solid $black;
 }

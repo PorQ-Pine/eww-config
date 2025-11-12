@@ -3,6 +3,9 @@
     font-family: "JetBrains Mono Nerd Font", "FiraCode Nerd Font", "Iosevka Nerd Font", monospace;
     font-weight: bold;
     box-shadow: none;
+    background-clip: padding-box;
+    -gtk-icon-source: builtin;
+    -gtk-icon-palette: default;
 }
 
 window,
