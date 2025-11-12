@@ -1,12 +1,4 @@
 ; VARS
-
-(defvar open_control_center false)
-(defvar open_date false)
-(defvar open_power_menu true)
-(defvar open_profile_selector false)
-(defvar indicator_brig_hover false)
-(defvar indicator_volume_hover false)
-
 (defvar notifications_data "{\"paused\": false, \"notifications\": []}")
 
 ; YES VARS

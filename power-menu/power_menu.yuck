@@ -8,25 +8,22 @@
 )
 
 (defwidget powermenu []
-  (revealer :transition "none" :reveal {open_power_menu}
-    
-    (box :orientation "h" :space-evenly true :valign "center" :halign "center" :class "powermenu-box"
-      (powermenu_entry    :label "Power off"
-        :icon "󰐥"
-      :onclick "systemctl poweroff")
-      (powermenu_entry    :label "Reboot"
-        :icon "󰜉"
-      :onclick "systemctl reboot")
-      ;(powermenu_entry    :label "Lock"
+  (box :orientation "h" :space-evenly true :valign "center" :halign "center" :class "powermenu-box"
+    (powermenu_entry    :label "Power off"
+      :icon "󰐥"
+    :onclick "systemctl poweroff")
+    (powermenu_entry    :label "Reboot"
+      :icon "󰜉"
+    :onclick "systemctl reboot")
+    ;(powermenu_entry    :label "Lock"
       ;  :icon ""
-      ;:onclick "")
-      ;(powermenu_entry    :label "Sign out"
+    ;:onclick "")
+    ;(powermenu_entry    :label "Sign out"
       ;  :icon "󰗼"
-      ;:onclick "")
-      (powermenu_entry    :label "Cancel"
-        :icon "󰅖"
-      :onclick "scripts/customtoggle.sh power_menu &")
-      
-    )
+    ;:onclick "")
+    (powermenu_entry    :label "Cancel"
+      :icon "󰅖"
+    :onclick "eww open power_menu --toggle &")
+    
   )
 )

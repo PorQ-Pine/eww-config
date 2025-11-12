@@ -76,7 +76,7 @@
   (button
     :class "launcher"
     :onclick {launcher_command}
-    (image :path "other/quillos.png" :image-width 24)
+    (image :path "other/quillos.svg" :image-width 24)
   )
 )
 
@@ -123,7 +123,7 @@
 (defwidget date-indicator []
   (button
     :class "date-indicator"
-    :onclick "scripts/customtoggle.sh date &"
+    :onclick "eww open date --toggle &"
     (label :text {formattime(EWW_TIME, "%d.%m.20%y")}
       :class "date-indicator-text"
     :justify "center")
@@ -133,7 +133,7 @@
 ; Indicator
 (defwidget indicator []
   (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-date-wrapper"
-    (eventbox :onclick "scripts/customtoggle.sh control_center && scripts/update-history.sh"
+    (eventbox :onclick "eww open control_center --toggle & scripts/update-history.sh"
       :class "indicator"
       (box :orientation "h" :space-evenly false :spacing 2
         (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-icons"

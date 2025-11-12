@@ -1,16 +1,16 @@
 (defwidget user []
-    (box :orientation "h" :space-evenly true :class "user-box"
-        (box :orientation "h" :space-evenly false :halign "start"
-            (button :class "open-powermenu-button" :onclick "scripts/customtoggle.sh power_menu &" "󰐥")
-            (box :orientation "h" :space-evenly false :class "user-image")
-        )
-        (box :orientation "v" :space-evenly false :halign "end"
-            (box :orientation "h" :space-evenly false
-                (label :class "user-clock-time" :text {formattime(EWW_TIME, "%H:%M")})
-                (label :class "user-clock-separator" :text "|")
-                (label :class "user-clock-date" :text {formattime(EWW_TIME, "%a, %b %d")})
-            )
-            (label :class "user-uptime" :text "uptime: ${uptime}")
-        )
+  (box :orientation "h" :space-evenly true :class "user-box"
+    (box :orientation "h" :space-evenly false :halign "start"
+      (button :class "open-powermenu-button" :onclick "eww open power_menu --toggle &" "󰐥")
+      (box :orientation "h" :space-evenly false :class "user-image")
     )
+    (box :orientation "v" :space-evenly false :halign "end"
+      (box :orientation "h" :space-evenly false
+        (label :class "user-clock-time" :text {formattime(EWW_TIME, "%H:%M")})
+        (label :class "user-clock-separator" :text "|")
+        (label :class "user-clock-date" :text {formattime(EWW_TIME, "%a, %b %d")})
+      )
+      (label :class "user-uptime" :text "uptime: ${uptime}")
+    )
+  )
 )

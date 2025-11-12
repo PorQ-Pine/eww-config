@@ -5,16 +5,13 @@
 (include "quick-settings/user.yuck")
 
 (defwidget control_center []
-  (revealer :transition "none" :reveal {open_control_center}
-    (box :orientation "v" :space-evenly false
-      (box :orientation "v" :space-evenly false :class "control-center"
-        (user)
-        (quick_settings)
-        (sliders)
-      )
-      (notifications)
-      (music)
+  (box :orientation "v" :space-evenly false
+    (box :orientation "v" :space-evenly false :class "control-center"
+      (user)
+      (quick_settings)
+      (sliders)
     )
-    
+    (notifications)
+    (music)
   )
 )

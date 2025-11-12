@@ -39,12 +39,10 @@
 )
 
 (defwidget date []
-  (revealer :transition "none" :reveal {open_date}
-    
-    (box :class "date"
-      :orientation "v"
-      :space-evenly false
-      (timebox)
-      (cal)
-    )
-  ))
+  (box :class "date"
+    :orientation "v"
+    :space-evenly false
+    (timebox)
+    (cal)
+  )
+)
