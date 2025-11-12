@@ -176,7 +176,7 @@
   (box :visible {battery_status_text == "" ? false : true}
     :class "indicator-bat-icon"
     (label
-      :text {battery_status_text == "charging" ? "" : str_to_int(battery_percentage_num) > 90 ? "" : str_to_int(battery_percentage_num) > 75 ? "" : str_to_int(battery_percentage_num) > 50 ? "" : str_to_int(battery_percentage_num) > 25 ? "" : ""}
+      :text {battery_status_text == "charging" ? "" : battery_percentage_num > 90 ? "" : battery_percentage_num > 75 ? "" : battery_percentage_num > 50 ? "" : battery_percentage_num > 25 ? "" : ""}
     )
     (label
       :class "icon-text"
