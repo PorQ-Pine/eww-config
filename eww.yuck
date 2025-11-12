@@ -142,19 +142,9 @@
         (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-icons"
           (volume_icon)
           (network_icon)
-          (do-not-disturb_icon)
           (battery_icon))
         (clock)))
     (date-indicator)))
-
-
-(defwidget do-not-disturb_icon []
-  (label
-    :class "indicator-dnd-icon"
-    :visible {notifications_data.paused == false ? false : true}
-    :text "󰍷"
-  )
-)
 
 (defwidget network_icon []
   (label
