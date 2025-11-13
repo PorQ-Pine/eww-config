@@ -1,7 +1,7 @@
 
 
 (defwidget notifications []
-  (box :orientation "v" :space-evenly false :class "notifications-center"
+  (box :orientation "v" :space-evenly false :class "notifications-center" :visible {notifications_data.empty == false}
     (box :orientation "h" :space-evenly true
       (label :class "notifications-header-text" :halign "start" :text "Notifications")
       (button :halign "end" :class "notifications-clear-button" :onclick "dunstctl history-clear & scripts/update-history.sh" "Clear all")
