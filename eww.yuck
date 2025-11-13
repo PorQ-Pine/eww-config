@@ -2,6 +2,7 @@
 (include "quick-settings/control_center.yuck")
 (include "calendar/calendar.yuck")
 (include "power-menu/power_menu.yuck")
+(include "windowing/window_menu.yuck")
 
 (defpoll battery_status_text :interval "5s" "scripts/battery_state.sh")
 (defpoll battery_percentage_num :interval "5s" "scripts/battery_percentage.sh")
@@ -51,6 +52,15 @@
   (powermenu)
 )
 
+(defwindow window_menu
+  :monitor '["0"]'
+  :stacking "overlay"
+  :geometry (geometry
+    :anchor "top left"
+  )
+  (window_menu)
+)
+
 ; Bar
 (defwidget bar []
   (box
@@ -62,6 +72,7 @@
     (box :halign "start" :orientation "h" :space-evenly false :spacing 2
       (launcher)
       (virtualkeyboard)
+      (windowing_button)
     )
     
     ;; center
@@ -90,6 +101,15 @@
     :class "launcher" ; Using the same class for consistent styling
     :onclick "scripts/virtualkeyboard.sh"
     (image :path "other/keyboard.svg" :image-width 24)
+  )
+)
+
+; Windowing menu button
+(defwidget windowing_button []
+  (button
+    :class "launcher" ; Using the same class for consistent styling
+    :onclick "eww open window_menu --toggle"
+    (image :path "other/select_window.svg" :image-width 24)
   )
 )
 

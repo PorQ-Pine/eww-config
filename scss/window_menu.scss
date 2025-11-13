@@ -1,0 +1,38 @@
+.control-center {
+  @include window;
+  border-color: $black;
+  border-width: 0.2rem;
+  border-style: solid;
+  min-width: 200px; // Ensure it has a reasonable minimum width
+}
+
+.control-center-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: $black; // Use theme color
+}
+
+.window-arrow-button {
+  background-color: $black; // Use theme color
+  color: $white; // Use theme color
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  font-size: 1.5em;
+  min-width: 40px; // Give buttons a minimum width
+  min-height: 40px; // Give buttons a minimum height
+}
+
+.window-action-button {
+  background-color: $black; // Use theme color
+  color: $white; // Use theme color
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  font-size: 1em;
+  min-width: 150px; // Ensure consistent width for action buttons
+}
+
+.window-action-button:hover {
+  background-color: lighten($black, 20%); // Lighter on hover
+}
