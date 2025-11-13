@@ -23,7 +23,7 @@
     ;:onclick "")
     (powermenu_entry    :label "Cancel"
       :icon "󰅖"
-    :onclick "eww open power_menu --toggle &")
+    :onclick "eww open power_menu --toggle")
     
   )
 )

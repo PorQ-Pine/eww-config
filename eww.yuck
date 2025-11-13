@@ -126,7 +126,7 @@
 (defwidget date-indicator []
   (button
     :class "date-indicator"
-    :onclick "eww open date --toggle &"
+    :onclick "eww open date --toggle"
     (label :text {formattime(EWW_TIME, "%d.%m.20%y")}
       :class "date-indicator-text"
     :justify "center")
