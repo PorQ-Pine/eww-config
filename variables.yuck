@@ -31,7 +31,3 @@
 
 (deflisten mpris :initial "{}"
 "scripts/mpris.sh")
-
-(deflisten mpris_positions :initial "{0}"
-"scripts/positions.sh")
-

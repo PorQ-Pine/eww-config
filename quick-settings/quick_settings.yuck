@@ -43,7 +43,7 @@
 
 (defwidget bluetooth []
   (quick_settings_button  :condition {bluetooth.on == false}
-    :action "bash -c 'rfkill list bluetooth | grep -q \"Soft blocked: yes\" && rfkill unblock bluetooth || rfkill block bluetooth'"
+    :action "bash -c 'rfkill list bluetooth | grep -q \"Soft blocked: yes\" && rfkill unblock bluetooth || rfkill block bluetooth' >/dev/null 2>&1 &"
     :icon "󰂯"
     :label {bluetooth.name == "" ? "Bluetooth" : bluetooth.name}
     :class "right-top-plite"

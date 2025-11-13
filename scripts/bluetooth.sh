@@ -21,11 +21,13 @@ get_bt() {
   echo '{"on":true,"name":"'"$name"'","signal":"'"$rssi"'"}'
 }
 
-get_bt
-
-dbus-monitor --system \
-  "type='signal',interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',sender='org.bluez'" \
-  | rg --line-buffered "RSSI|Connected|Powered" \
-  | while read -r _; do
-      get_bt
-    done
+# This is a stupid workaround where dbus monitoring did not work (permissions) and bluetoothctl --monitor DIDN'T WORK AT ALL FOR NO REASON idk maybe it's shell breaks things
+prev=""
+while true; do
+    curr=$(bluetoothctl show | rg "Powered|Discoverable|Pairable" | tr -d '[:space:]')
+    if [[ "$curr" != "$prev" ]]; then
+        get_bt
+        prev="$curr"
+    fi
+    sleep 1
+done
