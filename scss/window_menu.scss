@@ -1,38 +1,40 @@
+@import "../colors.scss";
+@import "lib.scss";
+
 .control-center {
   @include window;
   border-color: $black;
   border-width: 0.2rem;
   border-style: solid;
-  min-width: 200px; // Ensure it has a reasonable minimum width
+  min-width: 20rem;
 }
 
-.control-center-title {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: $black; // Use theme color
+.window-navigation {
+  margin-bottom: 1rem;
 }
 
 .window-arrow-button {
-  background-color: $black; // Use theme color
-  color: $white; // Use theme color
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 0 5px;
-  font-size: 1.5em;
-  min-width: 40px; // Give buttons a minimum width
-  min-height: 40px; // Give buttons a minimum height
+  background-color: $white;
+  color: $black;
+  border-radius: 1.5rem;
+  font-size: 4rem;
+  border-color: $black;
+  border-width: 0.2rem;
+  border-style: solid;
+  min-height: 4rem;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
 }
 
 .window-action-button {
-  background-color: $black; // Use theme color
-  color: $white; // Use theme color
-  border-radius: 5px;
-  padding: 8px 10px;
-  margin-bottom: 5px;
-  font-size: 1em;
-  min-width: 150px; // Ensure consistent width for action buttons
-}
-
-.window-action-button:hover {
-  background-color: lighten($black, 20%); // Lighter on hover
+  background-color: $white;
+  color: $black;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  border-color: $black;
+  border-width: 0.2rem;
+  border-style: solid;
+  min-width: 15rem;
 }

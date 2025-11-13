@@ -9,15 +9,15 @@
       :class "window-navigation"
       :orientation "h"
       :space-evenly true
-      (button :class "window-arrow-button" :onclick "command_left" " backward")
-      (button :class "window-arrow-button" :onclick "command_right" " forward")
+      (button :class "window-arrow-button" :onclick "niri msg action focus-column-left" "")
+      (button :class "window-arrow-button" :onclick "niri msg action focus-column-right" "")
     )
     (box
       :class "window-actions"
       :orientation "v"
       :space-evenly false
-      (button :class "window-action-button" :onclick "command_action1" "Action 1")
-      (button :class "window-action-button" :onclick "command_action2" "Action 2")
+      (button :class "window-action-button" :onclick "niri msg action close-window & eww close window_menu" "Close window")
+      (button :class "window-action-button" :onclick "niri msg action toggle-overview & eww close window_menu" "Toggle overlay")
     )
   )
 )
