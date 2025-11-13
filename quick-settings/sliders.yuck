@@ -20,7 +20,7 @@
 (defwidget brightness_scale_cool []
   (overlay :hexpand true
     (scale :min 0 :max 255  :value {brightness_cool} :onchange "echo {} > /sys/class/backlight/backlight_cool/brightness &" :class 'scale ${brightness_cool < 10 ? "less" : "more"}')
-    (label :class 'scale-icon ${brightness_cool < 5 ? "less" : "more"}' :halign "start" :text {brightness_cool < 85 ? " 󰃞" : brightness_cool < 170 ? " 󰃟" : " 󰃠"})
+    (label :class 'scale-icon ${brightness_cool < 25 ? "less" : "more"}' :halign "start" :text {brightness_cool < 85 ? " 󰃞 " : brightness_cool < 170 ? " 󰃟 " : " 󰃠 "})
   )
 )
 
@@ -28,7 +28,7 @@
 (defwidget brightness_scale_warm []
   (overlay :hexpand true
     (scale :min 0 :max 255  :value {brightness_warm} :onchange "echo {} > /sys/class/backlight/backlight_warm/brightness &" :class 'scale ${brightness_warm < 10 ? "less" : "more"}')
-    (label :class 'scale-icon ${brightness_warm < 5 ? "less" : "more"}' :halign "start" :text {brightness_warm < 85 ? " 󰃞󱩅" : brightness_warm < 170 ? " 󰃟󱩅" : " 󰃠󱩅"})
+    (label :class 'scale-icon ${brightness_warm < 25 ? "less" : "more"}' :halign "start" :text {brightness_warm < 85 ? " 󰃞 󱩅" : brightness_warm < 170 ? " 󰃟 󱩅" : " 󰃠 󱩅"})
   )
 )
 

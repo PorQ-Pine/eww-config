@@ -23,10 +23,10 @@
 (deflisten volume :initial "0"
 "scripts/volume.sh")
 
-(deflisten brightness_cool
+(deflisten brightness_cool :initial "0"
 "scripts/brightness_cool.sh")
 
-(deflisten brightness_warm
+(deflisten brightness_warm :initial "0"
 "scripts/brightness_warm.sh")
 
 (deflisten mpris :initial "{}"
