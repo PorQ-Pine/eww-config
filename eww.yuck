@@ -136,7 +136,7 @@
 ; Indicator
 (defwidget indicator []
   (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-date-wrapper"
-    (eventbox :onclick "eww open control_center --toggle & scripts/update-history.sh"
+    (eventbox :onclick "eww open control_center --toggle && scripts/update-history.sh &"
       :class "indicator"
       (box :orientation "h" :space-evenly false :spacing 2
         (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-icons"
