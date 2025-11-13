@@ -61,6 +61,7 @@
     ;; left
     (box :halign "start" :orientation "h" :space-evenly false :spacing 2
       (launcher)
+      (virtualkeyboard)
     )
     
     ;; center
@@ -80,6 +81,15 @@
     :class "launcher"
     :onclick {launcher_command}
     (image :path "other/quillos.svg" :image-width 24)
+  )
+)
+
+; Virtual Keyboard launcher
+(defwidget virtualkeyboard []
+  (button
+    :class "launcher" ; Using the same class for consistent styling
+    :onclick "scripts/virtualkeyboard.sh"
+    (image :path "other/keyboard.svg" :image-width 24)
   )
 )
 
