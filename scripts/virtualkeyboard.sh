@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SQUEEKBOARD_PID=$(pgrep squeekboard-restyled)
+SQUEEKBOARD_PID=$(pgrep squeekboard)
 SHOWN_FLAG="/tmp/squeekboard_shown"
 
 if [ -z "$SQUEEKBOARD_PID" ]; then
