@@ -163,7 +163,7 @@
 ; Indicator
 (defwidget indicator []
   (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-date-wrapper"
-    (eventbox :onclick "eww open control_center --toggle && eww-data-requester send notifications"
+    (eventbox :onclick "eww-data-requester send settingsmenu"
       :class "indicator"
       (box :orientation "h" :space-evenly false :spacing 2
         (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-icons"
