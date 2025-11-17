@@ -4,7 +4,7 @@
   (box :orientation "v" :space-evenly false :class "notifications-center" :visible {notifications_data.empty == false}
     (box :orientation "h" :space-evenly true
       (label :class "notifications-header-text" :halign "start" :text "Notifications")
-      (button :halign "end" :class "notifications-clear-button" :onclick "dunstctl history-clear & scripts/update-history.sh" "Clear all")
+      (button :halign "end" :class "notifications-clear-button" :onclick "dunstctl history-clear & eww-data-requester send notifications" "Clear all")
     )
     (scroll :vscroll true :class "notifications-scroll"
       (box :orientation "v" :space-evenly false
@@ -37,7 +37,7 @@
             (box :orientation "v" :width 55 :height 55 :vexpand false :valign "center"
               (button :class "notification-close-button"
                 :vexpand false :valign "center"
-                :onclick "dunstctl history-rm ${notify.id} & scripts/update-history.sh"
+                :onclick "dunstctl history-rm ${notify.id} & eww-data-requester send notifications"
               "✕")
             )
             

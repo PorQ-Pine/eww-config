@@ -4,9 +4,6 @@
 (include "power-menu/power_menu.yuck")
 (include "windowing/window_menu.yuck")
 
-(defpoll battery_status_text :interval "5s" "scripts/battery_state.sh")
-(defpoll battery_percentage_num :interval "5s" "scripts/battery_percentage.sh")
-
 ; Windows
 (defwindow bar []
   :monitor '["0"]'
@@ -15,7 +12,7 @@
     :width "100%"
     :anchor "top center"
   )
-  :onopen "scripts/update-history.sh"
+  :onopen "eww-data-requester send notifications"
   :exclusive true
   :namespace "eww"
   (bar)
@@ -166,7 +163,7 @@
 ; Indicator
 (defwidget indicator []
   (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-date-wrapper"
-    (eventbox :onclick "eww open control_center --toggle && scripts/update-history.sh &"
+    (eventbox :onclick "eww open control_center --toggle && eww-data-requester send notifications"
       :class "indicator"
       (box :orientation "h" :space-evenly false :spacing 2
         (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-icons"
@@ -195,7 +192,7 @@
   (box :visible {battery_status_text == "" ? false : true}
     :class "indicator-bat-icon"
     (label
-      :text {battery_status_text == "charging" ? "" : battery_percentage_num > 90 ? "" : battery_percentage_num > 75 ? "" : battery_percentage_num > 50 ? "" : battery_percentage_num > 25 ? "" : ""}
+      :text {battery_status_text == "Charging" ? "" : battery_percentage_num > 90 ? "" : battery_percentage_num > 75 ? "" : battery_percentage_num > 50 ? "" : battery_percentage_num > 25 ? "" : ""}
     )
     (label
       :class "icon-text"

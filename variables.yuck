@@ -1,6 +1,3 @@
-; VARS
-(defvar notifications_data "{\"paused\": false, \"notifications\": []}")
-
 ; YES VARS
 (defvar launcher_command "nwg-drawer")
 
@@ -14,20 +11,29 @@
 
 ; LISTENS
 
+(deflisten battery_status_text :initial "Charging"
+"eww-data-requester listen battery_state")
+
+(deflisten battery_percentage_num :initial "90"
+"eww-data-requester listen battery_percent")
+
+(deflisten notifications_data :initial "{\"paused\": false, \"empty\":false, \"notifications\": []}"
+"eww-data-requester listen notifications")
+
 (deflisten network :initial '{"essid": "lo", "signal": ""}'
-"eww-data-requester network")
+"eww-data-requester listen network")
 
 (deflisten bluetooth :initial '{"on": "false", "name": "" , "signal": ""}'
-"eww-data-requester bluetooth")
+"eww-data-requester listen bluetooth")
 
 (deflisten volume :initial "0"
-"eww-data-requester volume")
+"eww-data-requester listen volume")
 
 (deflisten brightness_cool :initial "0"
-"eww-data-requester backlight_cool")
+"eww-data-requester listen backlight_cool")
 
 (deflisten brightness_warm :initial "0"
-"eww-data-requester backlight_warm")
+"eww-data-requester listen backlight_warm")
 
 (deflisten mpris :initial "{}"
-"eww-data-requester player")
+"eww-data-requester listen player")
