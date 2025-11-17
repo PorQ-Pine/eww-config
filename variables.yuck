@@ -15,19 +15,19 @@
 ; LISTENS
 
 (deflisten network :initial '{"essid": "lo", "signal": ""}'
-"scripts/network.sh")
+"eww-data-requester network")
 
 (deflisten bluetooth :initial '{"on": "false", "name": "" , "signal": ""}'
-"scripts/bluetooth.sh")
+"eww-data-requester bluetooth")
 
 (deflisten volume :initial "0"
-"scripts/volume.sh")
+"eww-data-requester volume")
 
 (deflisten brightness_cool :initial "0"
-"scripts/brightness_cool.sh")
+"eww-data-requester backlight_cool")
 
 (deflisten brightness_warm :initial "0"
-"scripts/brightness_warm.sh")
+"eww-data-requester backlight_warm")
 
 (deflisten mpris :initial "{}"
-"scripts/mpris.sh")
+"eww-data-requester player")
