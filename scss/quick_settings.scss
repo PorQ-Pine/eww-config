@@ -9,9 +9,17 @@
     border-style: solid;
 }
 
+.quick_settings_button:active {
+  background-color: $black;
+}
+
 .quick_settings_button_toggled {
     background-color: $black;
     color: $white;
+}
+
+.quick_settings_button_toggled:active {
+  background-color: $white;
 }
 
 .quick_settings_box {

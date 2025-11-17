@@ -22,6 +22,10 @@
     border-style: solid;
 }
 
+.powermenu-button:active {
+  background-color: $black;
+}
+
 .powermenu-icon {
     font-size: 4rem;
     color: $black;

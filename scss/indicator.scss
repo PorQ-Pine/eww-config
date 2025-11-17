@@ -11,6 +11,11 @@
     margin-right: 0;
 }
 
+.indicator:active {
+  background-color: $white;
+  color: $black;
+}
+
 .date-indicator {
     font-size: 0.85rem;
     background-color: $black;
@@ -68,7 +73,6 @@
     margin-right: 0.5rem;
     font-size: 1.3rem;
 }
-
 
 .icon-text {
     margin: 0 0.2rem;

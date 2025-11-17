@@ -17,7 +17,7 @@
 (deflisten battery_percentage_num :initial "90"
 "eww-data-requester listen battery_percent")
 
-(deflisten notifications_data :initial "{\"paused\": false, \"empty\":false, \"notifications\": []}"
+(deflisten notifications_data :initial "{\"paused\": false, \"empty\":true, \"notifications\": []}"
 "eww-data-requester listen notifications")
 
 (deflisten network :initial '{"essid": "lo", "signal": ""}'

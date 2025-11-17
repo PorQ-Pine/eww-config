@@ -11,6 +11,10 @@
     font-size: 1.5rem;
 }
 
+.open-powermenu-button:active {
+  background-color: $black;
+}
+
 .user-clock-time {
     color: $black;
     font-size: 1.4rem;

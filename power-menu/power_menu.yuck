@@ -10,11 +10,13 @@
 (defwidget powermenu []
   (box :orientation "h" :space-evenly true :valign "center" :halign "center" :class "powermenu-box"
     (powermenu_entry    :label "Power off"
+      :timeout 2000
       :icon "󰐥"
-    :onclick "systemctl poweroff")
+    :onclick "systemctl poweroff & eww close power_menu")
     (powermenu_entry    :label "Reboot"
+      :timeout 2000
       :icon "󰜉"
-    :onclick "systemctl reboot")
+    :onclick "systemctl reboot & eww close power_menu")
     ;(powermenu_entry    :label "Lock"
       ;  :icon ""
     ;:onclick "")
@@ -23,7 +25,7 @@
     ;:onclick "")
     (powermenu_entry    :label "Cancel"
       :icon "󰅖"
-    :onclick "eww open power_menu --toggle")
+    :onclick "eww close power_menu")
     
   )
 )
