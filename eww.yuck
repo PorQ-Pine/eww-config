@@ -65,6 +65,19 @@
     :orientation "h"
     :space-evenly false
     
+    ; Hidden listeners to keep deflistens active
+    (box :visible false
+      (label :text "${battery_status_text}")
+      (label :text "${battery_percentage_num}")
+      (label :text "${notifications_data}")
+      (label :text "${network}")
+      (label :text "${bluetooth}")
+      (label :text "${volume}")
+      (label :text "${brightness_cool}")
+      (label :text "${brightness_warm}")
+      (label :text "${mpris}")
+    )
+
     ;; left
     (box :halign "start" :orientation "h" :space-evenly false :spacing 2
       (launcher)
