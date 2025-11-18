@@ -12,11 +12,11 @@
     (powermenu_entry    :label "Power off"
       :timeout 2000
       :icon "󰐥"
-    :onclick "systemctl poweroff & eww close power_menu")
+    :onclick "sudo poweroff now & eww --no-daemonize close power_menu")
     (powermenu_entry    :label "Reboot"
       :timeout 2000
       :icon "󰜉"
-    :onclick "systemctl reboot & eww close power_menu")
+    :onclick "sudo reboot now & eww --no-daemonize close power_menu")
     ;(powermenu_entry    :label "Lock"
       ;  :icon ""
     ;:onclick "")
@@ -25,7 +25,7 @@
     ;:onclick "")
     (powermenu_entry    :label "Cancel"
       :icon "󰅖"
-    :onclick "eww close power_menu")
+    :onclick "eww --no-daemonize close power_menu")
     
   )
 )

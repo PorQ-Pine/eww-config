@@ -5,7 +5,7 @@
     (box :orientation "h" :class "volume-control-center" :space-evenly false
       (volume_scale)
       (button :class "volume-slider-button ${volume == 'muted' ? 'active' : ''}" :onclick "pamixer -t" "󰝟")
-      (button :class "volume-arrow" :onclick "eww close control_center & pavucontrol &" "󰅂")
+      (button :class "volume-arrow" :onclick "eww --no-daemonize close control_center & pavucontrol &" "󰅂")
     )
     (box :orientation "h" :class "brightness-control-center" :space-evenly false
       (brightness_scale_cool)
@@ -17,9 +17,10 @@
 )
 
 ; brigntess
+; max 255 doesn't work, dughdushgui
 (defwidget brightness_scale_cool []
   (overlay :hexpand true
-    (scale :min 0 :max 255  :value {brightness_cool} :onchange "echo {} > /sys/class/backlight/backlight_cool/brightness &" :class 'scale ${brightness_cool < 10 ? "less" : "more"}')
+    (scale :min 0 :max 100 :value brightness_cool :onchange "echo $(({} * 255 / 100)) > /sys/class/backlight/backlight_cool/brightness" :class 'scale ${brightness_cool < 10 ? "less" : "more"}')
     (label :class 'scale-icon ${brightness_cool < 25 ? "less" : "more"}' :halign "start" :text {brightness_cool < 85 ? " 󰃞 " : brightness_cool < 170 ? " 󰃟 " : " 󰃠 "})
   )
 )
@@ -27,7 +28,7 @@
 ; brigntess warm
 (defwidget brightness_scale_warm []
   (overlay :hexpand true
-    (scale :min 0 :max 255  :value {brightness_warm} :onchange "echo {} > /sys/class/backlight/backlight_warm/brightness &" :class 'scale ${brightness_warm < 10 ? "less" : "more"}')
+    (scale :min 0 :max 100 :value brightness_warm :onchange "echo $(({} * 255 / 100)) > /sys/class/backlight/backlight_warm/brightness" :class 'scale ${brightness_warm < 10 ? "less" : "more"}')
     (label :class 'scale-icon ${brightness_warm < 25 ? "less" : "more"}' :halign "start" :text {brightness_warm < 85 ? " 󰃞 󱩅" : brightness_warm < 170 ? " 󰃟 󱩅" : " 󰃠 󱩅"})
   )
 )

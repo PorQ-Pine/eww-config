@@ -118,7 +118,7 @@
 (defwidget windowing_button []
   (button
     :class "launcher" ; Using the same class for consistent styling
-    :onclick "eww open window_menu --toggle"
+    :onclick "eww --no-daemonize open window_menu --toggle"
     (image :path "other/select_window.svg" :image-width 24)
   )
 )
@@ -166,7 +166,7 @@
 (defwidget date-indicator []
   (button
     :class "date-indicator"
-    :onclick "eww open date --toggle"
+    :onclick "eww --no-daemonize open date --toggle"
     (label :text {formattime(EWW_TIME, "%d.%m.20%y")}
       :class "date-indicator-text"
     :justify "center")
