@@ -12,7 +12,7 @@
     (powermenu_entry    :label "Power off"
       :timeout 2000
       :icon "󰐥"
-    :onclick "sudo poweroff now & eww --no-daemonize close power_menu")
+    :onclick "sudo poweroff & eww --no-daemonize close power_menu")
     (powermenu_entry    :label "Reboot"
       :timeout 2000
       :icon "󰜉"
