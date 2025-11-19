@@ -27,7 +27,9 @@
 
 (defwidget network []
   (quick_settings_button  :condition {network.essid == "lo"}
-    :action "nmcli connection down id '${network.essid}'"
+    :action {network.essid != "lo"
+    ? "bash -c 'rfkill block wlan' >/dev/null 2>&1"
+    : "bash -c 'rfkill unblock wlan' >/dev/null 2>&1"}
     :icon {
     network.essid =~ "Wired" ? "󰈀" :  ;; wired icon
     network.essid == "lo" ? "󰤭" :
