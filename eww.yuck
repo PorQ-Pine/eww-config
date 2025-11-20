@@ -3,6 +3,7 @@
 (include "calendar/calendar.yuck")
 (include "power-menu/power_menu.yuck")
 (include "windowing/window_menu.yuck")
+(include "screen_settings/screen_settings.yuck")
 
 ; Windows
 (defwindow bar []
@@ -58,6 +59,15 @@
   (window_menu)
 )
 
+(defwindow screen_settings
+  :monitor '["0"]'
+  :stacking "overlay"
+  :geometry (geometry
+    :anchor "top left"
+  )
+  (screen_settings)
+)
+
 ; Bar
 (defwidget bar []
   (box
@@ -83,6 +93,8 @@
       (launcher)
       (virtualkeyboard)
       (windowing_button)
+      (screen_settings_button)
+      (refresh_button)
     )
     
     ;; center
@@ -117,9 +129,27 @@
 ; Windowing menu button
 (defwidget windowing_button []
   (button
-    :class "launcher" ; Using the same class for consistent styling
+    :class "launcher"
     :onclick "eww --no-daemonize open window_menu --toggle"
     (image :path "other/select_window.svg" :image-width 24)
+  )
+)
+
+; Screen settings button
+(defwidget screen_settings_button []
+  (button
+    :class "launcher"
+    :onclick "eww --no-daemonize open screen_settings --toggle"
+    (image :path "other/screen.svg" :image-width 24)
+  )
+)
+
+; Refresh button
+(defwidget refresh_button []
+  (button
+    :class "launcher"
+    :onclick "eww-data-requester send refresh"
+    (image :path "other/refresh.svg" :image-width 24)
   )
 )
 

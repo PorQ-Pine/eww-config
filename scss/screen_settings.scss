@@ -1,0 +1,40 @@
+.screen-settings-content {
+  padding: 0.5rem;
+}
+
+.settings-section-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $black;
+}
+
+.settings-group {
+  background-color: transparent;
+  margin-top: 0.25rem;
+  border-color: $black;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 1.5rem;
+  padding: 0.60rem;
+}
+
+.selection-button {
+  padding: 0.75rem 1.25rem;
+  border-radius: 1.5rem;
+  background-color: $white;
+  color: $black;
+  border-color: $black;
+  border-width: 0.2rem;
+  border-style: solid;
+  font-size: 1.05rem;
+}
+
+.selection-button.active {
+  background-color: $black;
+  color: $white;
+}
+
+.driver-mode-button.active {
+  background-color: $black;
+  color: $white;
+}

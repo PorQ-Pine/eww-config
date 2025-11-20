@@ -1,0 +1,182 @@
+(defvar driver_mode true)
+(defvar driver_normal_mode true)
+(defvar driver_fast_mode false)
+
+(defvar dithering true)
+(defvar dithering_bayer true)
+(defvar dithering_bluenoise16 false)
+(defvar dithering_bluenoise32 false)
+
+(defvar bitdepth true)
+(defvar bitdepth_y1 true)
+(defvar bitdepth_y2 false)
+(defvar bitdepth_y4 false)
+
+(defvar conversion true)
+(defvar conversion_tresholding true)
+(defvar conversion_dithering false)
+
+(defvar redraw true)
+(defvar redraw_fast_drawing true)
+(defvar redraw_disabled false)
+
+(defwidget driver_mode_selector []
+  (box
+    :visible {driver_mode}
+    :class "settings-group"
+    :orientation "v"
+    :spacing 5
+    :space-evenly false
+    (label :text "Mode" :class "settings-section-label")
+    (box
+      :class "selection-buttons"
+      :orientation "h"
+      :spacing 5
+      (button
+        :class "selection-button ${driver_normal_mode ? "active" : ""}"
+        :onclick "eww update driver_normal_mode=true driver_fast_mode=false; eww-data-requester send screen_settings"
+        "Normal"
+      )
+      (button
+        :class "selection-button ${driver_fast_mode ? "active" : ""}"
+        :onclick "eww update driver_normal_mode=false driver_fast_mode=true; eww-data-requester send screen_settings"
+        "Fast"
+      )
+    )
+  )
+)
+
+(defwidget dithering_selector []
+  (box
+    :visible {dithering}
+    :class "settings-group"
+    :orientation "v"
+    :spacing 5
+    :space-evenly false
+    (label :text "Dithering" :class "settings-section-label")
+    (box
+      :class "selection-buttons"
+      :orientation "h"
+      :spacing 5
+      (button
+        :class "selection-button ${dithering_bayer ? "active" : ""}"
+        :onclick "eww update dithering_bayer=true dithering_bluenoise16=false dithering_bluenoise32=false; eww-data-requester send screen_settings"
+        "Bayer"
+      )
+      (button
+        :class "selection-button ${dithering_bluenoise16 ? "active" : ""}"
+        :onclick "eww update dithering_bayer=false dithering_bluenoise16=true dithering_bluenoise32=false; eww-data-requester send screen_settings"
+        "BlueNoise16"
+      )
+      (button
+        :class "selection-button ${dithering_bluenoise32 ? "active" : ""}"
+        :onclick "eww update dithering_bayer=false dithering_bluenoise16=false dithering_bluenoise32=true; eww-data-requester send screen_settings"
+        "BlueNoise32"
+      )
+    )
+  )
+)
+
+(defwidget bitdepth_selector []
+  (box
+    :visible {bitdepth}
+    :class "settings-group"
+    :orientation "v"
+    :spacing 5
+    :space-evenly false
+    (label :text "BitDepth" :class "settings-section-label")
+    (box
+      :class "selection-buttons"
+      :orientation "h"
+      :spacing 5
+      (button
+        :class "selection-button ${bitdepth_y1 ? "active" : ""}"
+        :onclick "eww update bitdepth_y1=true bitdepth_y2=false bitdepth_y4=false; eww-data-requester send screen_settings"
+        "Y1"
+      )
+      (button
+        :class "selection-button ${bitdepth_y2 ? "active" : ""}"
+        :onclick "eww update bitdepth_y1=false bitdepth_y2=true bitdepth_y4=false; eww-data-requester send screen_settings"
+        "Y2"
+      )
+      (button
+        :class "selection-button ${bitdepth_y4 ? "active" : ""}"
+        :onclick "eww update bitdepth_y1=false bitdepth_y2=false bitdepth_y4=true; eww-data-requester send screen_settings"
+        "Y4"
+      )
+    )
+  )
+)
+
+(defwidget conversion_selector []
+  (box
+    :visible {conversion}
+    :class "settings-group"
+    :orientation "v"
+    :spacing 5
+    :space-evenly false
+    (label :text "Conversion" :class "settings-section-label")
+    (box
+      :class "selection-buttons"
+      :orientation "h"
+      :spacing 5
+      (button
+        :class "selection-button ${conversion_tresholding ? "active" : ""}"
+        :onclick "eww update conversion_tresholding=true conversion_dithering=false; eww-data-requester send screen_settings"
+        "Tresholding"
+      )
+      (button
+        :class "selection-button ${conversion_dithering ? "active" : ""}"
+        :onclick "eww update conversion_tresholding=false conversion_dithering=true; eww-data-requester send screen_settings"
+        "Dithering"
+      )
+    )
+  )
+)
+
+(defwidget redraw_selector []
+  (box
+    :visible {redraw}
+    :class "settings-group"
+    :orientation "v"
+    :spacing 5
+    :space-evenly false
+    (label :text "Redraw" :class "settings-section-label")
+    (box
+      :class "selection-buttons"
+      :orientation "h"
+      :spacing 5
+      (button
+        :class "selection-button ${redraw_fast_drawing ? "active" : ""}"
+        :onclick "eww update redraw_fast_drawing=true redraw_disabled=false; eww-data-requester send screen_settings"
+        "Fast drawing"
+      )
+      (button
+        :class "selection-button ${redraw_disabled ? "active" : ""}"
+        :onclick "eww update redraw_fast_drawing=false redraw_disabled=true; eww-data-requester send screen_settings"
+        "Disabled"
+      )
+    )
+  )
+)
+
+(defwidget screen_settings []
+  (box
+    :class "control-center"
+    :orientation "v"
+    :space-evenly false
+    :halign "end"
+    :valign "start"
+    (box
+      :class "screen-settings-content"
+      :orientation "v"
+      :space-evenly false
+      :spacing 5
+      (driver_mode_selector)
+      (dithering_selector)
+      (bitdepth_selector)
+      (conversion_selector)
+      (redraw_selector)
+    )
+  )
+)
