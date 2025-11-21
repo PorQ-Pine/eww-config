@@ -1,4 +1,3 @@
-(defvar driver_mode true)
 (defvar driver_normal_mode true)
 (defvar driver_fast_mode false)
 
@@ -22,7 +21,6 @@
 
 (defwidget driver_mode_selector []
   (box
-    :visible {driver_mode}
     :class "settings-group"
     :orientation "v"
     :spacing 5
