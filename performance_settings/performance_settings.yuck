@@ -1,0 +1,11 @@
+(defwidget performance_settings []
+  (box
+    :class "control-center"
+    :orientation "v"
+    :space-evenly false
+    :halign "end"
+    :valign "start"
+    (button :onclick "eww --no-daemonize close performance_settings" :class "close-button-simple" "Close")
+    (label :text "Performance Settings Content Here")
+  )
+)

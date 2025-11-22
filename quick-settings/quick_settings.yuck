@@ -4,6 +4,28 @@
       (network)
       (bluetooth)
     )
+    (box :orientation "h" :space-evenly true
+      (screen_settings_quick)
+      (performance_settings_quick)
+    )
+  )
+)
+
+(defwidget screen_settings_quick []
+  (simple_quick_settings_button
+    :action "eww --no-daemonize open screen_settings & eww --no-daemonize close control_center"
+    :icon "󰹑"
+    :label "Screen"
+    :class "left-bottom-plite"
+  )
+)
+
+(defwidget performance_settings_quick []
+  (simple_quick_settings_button
+    :action "eww --no-daemonize open performance_settings & eww --no-daemonize close control_center"
+    :icon "󰓅"
+    :label "Performance"
+    :class "right-bottom-plite"
   )
 )
 
@@ -19,6 +41,21 @@
         )
         (box :orientation "h" :space-evenly false :halign "start"
           (label :class {condition ? "quick-settings-state" : "quick-settings-state quick-settings-state-enabled"} :text {condition ? "Off" : "On"})
+        )
+      )
+    )
+  )
+)
+
+(defwidget simple_quick_settings_button [action icon label class]
+  (button :onclick {action} :class "quick_settings_button ${class}"
+    (box :orientation "h" :space-evenly false
+      (box :orientation "h" :space-evenly false :halign "start"
+        (label :class "quick-settings-icon" :text {icon})
+      )
+      (box :orientation "v" :class "quick-settings-info" :space-evenly false :halign "end" :valign "center"
+        (box :orientation "h" :space-evenly false :halign "start"
+          (label :class "quick-settings-text" :text {label})
         )
       )
     )

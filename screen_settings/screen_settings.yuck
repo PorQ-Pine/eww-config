@@ -182,6 +182,7 @@
       :orientation "v"
       :space-evenly false
       :spacing 5
+      (button :onclick "eww --no-daemonize close screen_settings" :class "close-button-simple" "Close")
       (driver_mode_selector)
       (dithering_selector)
       (bitdepth_selector)
