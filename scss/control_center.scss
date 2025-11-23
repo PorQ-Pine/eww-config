@@ -4,3 +4,16 @@
     border-width: 0.2rem;
     border-style: solid;
 }
+
+.settings-group {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    color: $black;
+}
+
+.settings-section-label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: $black;
+}

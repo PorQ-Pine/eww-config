@@ -33,5 +33,42 @@
     :valign "start"
     (button :onclick "eww --no-daemonize close performance_settings" :class "close-button-simple" "Close")
     (governor_chooser)
+    (cpu_core_usage)
+    (ram_usage)
+  )
+)
+
+(defwidget cpu_core_usage []
+  (box
+    :class "settings-group"
+    :orientation "v"
+    :spacing 5
+    :space-evenly false
+    (label :text "CPU Usage" :class "settings-section-label")
+    (box
+      :orientation "h"
+      :spacing 5
+      :space-evenly true
+      (label :text "${round(EWW_CPU.cores[0].usage, 0)}% " :halign "center")
+      (label :text "${round(EWW_CPU.cores[1].usage, 0)}% " :halign "center")
+      (label :text "${round(EWW_CPU.cores[2].usage, 0)}% " :halign "center")
+      (label :text "${round(EWW_CPU.cores[3].usage, 0)}% " :halign "center")
+    )
+  )
+)
+
+(defwidget ram_usage []
+  (box
+    :class "settings-group"
+    :orientation "v"
+    :spacing 5
+    :space-evenly false
+    (label :text "RAM Usage" :class "settings-section-label")
+    (box
+      :orientation "h"
+      :spacing 5
+      :space-evenly true
+      (label :text "${round(EWW_RAM.used_mem_perc, 0)}%" :halign "center")
+    )
   )
 )
