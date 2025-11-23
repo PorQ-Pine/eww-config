@@ -1,6 +1,6 @@
 ; TODO: add to eww data provider
 (defpoll current_governor :interval "1s" :initial "unknown" "cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor")
-(defpoll available_governors :interval "99999s" "cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors | jq -R 'split(\" \")'")
+
 
 (defwidget governor_chooser []
   (box
@@ -11,17 +11,45 @@
     (label :text "CPU Governor" :class "settings-section-label")
     (box
       :class "selection-buttons"
-      :orientation "h"
+      :orientation "v" ; Changed to vertical to stack rows
       :spacing 5
-      (for governor in available_governors
+      (box :orientation "h" :spacing 5
         (button
-          :class "selection-button ${current_governor == governor ? "active" : ""}"
-          :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo ${governor} > \"$i\"; done'"
-          "${governor}"
+          :class "selection-button ${current_governor == "conservative" ? "active" : ""}"
+          :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo conservative > \"$i\"; done'"
+          "conservative"
+        )
+        (button
+          :class "selection-button ${current_governor == "ondemand" ? "active" : ""}"
+          :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo ondemand > \"$i\"; done'"
+          "ondemand"
         )
       )
-    )
-  )
+      (box :orientation "h" :spacing 5
+        (button
+          :class "selection-button ${current_governor == "userspace" ? "active" : ""}"
+          :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo userspace > \"$i\"; done'"
+          "userspace"
+        )
+        (button
+          :class "selection-button ${current_governor == "powersave" ? "active" : ""}"
+          :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo powersave > \"$i\"; done'"
+          "powersave"
+        )
+      )
+      (box :orientation "h" :spacing 5
+        (button
+          :class "selection-button ${current_governor == "performance" ? "active" : ""}"
+          :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo performance > \"$i\"; done'"
+          "performance"
+        )
+        (button
+          :class "selection-button ${current_governor == "schedutil" ? "active" : ""}"
+          :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo schedutil > \"$i\"; done'"
+          "schedutil"
+        )
+      )
+    )  )
 )
 
 (defwidget performance_settings []
