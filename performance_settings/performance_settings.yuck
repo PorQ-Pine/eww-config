@@ -1,7 +1,6 @@
 ; TODO: add to eww data provider
 (defpoll current_governor :interval "1s" :initial "unknown" "cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor")
 
-
 (defwidget governor_chooser []
   (box
     :class "settings-group"
@@ -11,7 +10,7 @@
     (label :text "CPU Governor" :class "settings-section-label")
     (box
       :class "selection-buttons"
-      :orientation "v" ; Changed to vertical to stack rows
+      :orientation "v"
       :spacing 5
       (box :orientation "h" :spacing 5
         (button
@@ -49,7 +48,8 @@
           "schedutil"
         )
       )
-    )  )
+    )
+)
 )
 
 (defwidget performance_settings []

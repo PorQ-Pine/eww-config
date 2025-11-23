@@ -113,13 +113,13 @@
       (label :text "${redraw_fast_drawing}")
       (label :text "${redraw_disabled}")
     )
-
+    
     ;; left
     (box :halign "start" :orientation "h" :space-evenly false :spacing 2
       (launcher)
       (virtualkeyboard)
       (windowing_button)
-
+      
       (refresh_button)
     )
     
