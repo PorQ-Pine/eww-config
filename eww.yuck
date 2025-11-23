@@ -112,6 +112,7 @@
       (label :text "${redraw}")
       (label :text "${redraw_fast_drawing}")
       (label :text "${redraw_disabled}")
+      (label :text "${available_governors}")
     )
 
     ;; left

@@ -1,3 +1,29 @@
+; TODO: add to eww data provider
+(defpoll current_governor :interval "1s" :initial "unknown" "cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor")
+(defpoll available_governors :interval "99999s" "cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors | jq -R 'split(\" \")'")
+
+(defwidget governor_chooser []
+  (box
+    :class "settings-group"
+    :orientation "v"
+    :spacing 5
+    :space-evenly false
+    (label :text "CPU Governor" :class "settings-section-label")
+    (box
+      :class "selection-buttons"
+      :orientation "h"
+      :spacing 5
+      (for governor in available_governors
+        (button
+          :class "selection-button ${current_governor == governor ? "active" : ""}"
+          :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo ${governor} > \"$i\"; done'"
+          "${governor}"
+        )
+      )
+    )
+  )
+)
+
 (defwidget performance_settings []
   (box
     :class "control-center"
@@ -6,6 +32,6 @@
     :halign "end"
     :valign "start"
     (button :onclick "eww --no-daemonize close performance_settings" :class "close-button-simple" "Close")
-    (label :text "Performance Settings Content Here")
+    (governor_chooser)
   )
 )
