@@ -17,7 +17,6 @@
 
 (defvar thresholding_level true)
 (defvar thresholding_level_value 10)
-(defvar flash_reset_button false)
 
 (defvar redraw true)
 (defvar redraw_fast_drawing true)
@@ -154,17 +153,32 @@
     :spacing 5
     :space-evenly false
     (label :text "Threshold Level: ${thresholding_level_value}" :class "settings-section-label")
-    (scale
-      :class "treshold-scale"
-      :min 0
-      :max 101
-      :value thresholding_level_value
-      :onchange "eww --no-daemonize update thresholding_level_value={}; eww-data-requester send gamma_level ${thresholding_level_value}"
-      :hexpand true
+    (box
+      :orientation "h"
+      :space-evenly false
+      :spacing 5
+      (button
+        :class "selection-button-small"
+        :onclick "eww --no-daemonize update thresholding_level_value=$((${thresholding_level_value} == 1 ? 1 : ${thresholding_level_value} - 1)); eww-data-requester send gamma_update"
+        "-"
+      )
+      (scale
+        :class "treshold-scale"
+        :min 1
+        :max 101
+        :value thresholding_level_value
+        :onchange "eww --no-daemonize update thresholding_level_value={}; eww-data-requester send gamma_update"
+        :hexpand true
+      )
+      (button
+        :class "selection-button-small"
+        :onclick "eww --no-daemonize update thresholding_level_value=$((${thresholding_level_value} == 100 ? 100 : ${thresholding_level_value} + 1)); eww-data-requester send gamma_update"
+        "+"
+      )
     )
     (button
       :class "selection-button"
-      :onclick "eww --no-daemonize update thresholding_level_value=10; eww-data-requester send gamma_level 10"
+      :onclick "eww --no-daemonize update thresholding_level_value=10; eww-data-requester send gamma_update"
       "Reset"
     )
   )
