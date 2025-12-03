@@ -17,6 +17,7 @@
 
 (defvar thresholding_level true)
 (defvar thresholding_level_value 10)
+(defvar flash_reset_button false)
 
 (defvar redraw true)
 (defvar redraw_fast_drawing true)
@@ -160,6 +161,11 @@
       :value thresholding_level_value
       :onchange "eww --no-daemonize update thresholding_level_value={}; eww-data-requester send gamma_level ${thresholding_level_value}"
       :hexpand true
+    )
+    (button
+      :class "selection-button"
+      :onclick "eww --no-daemonize update thresholding_level_value=10; eww-data-requester send gamma_level 10"
+      "Reset"
     )
   )
 )
