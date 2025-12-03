@@ -154,8 +154,9 @@
     :space-evenly false
     (label :text "Threshold Level: ${thresholding_level_value}" :class "settings-section-label")
     (scale
+      :class "treshold-scale"
       :min 0
-      :max 100
+      :max 101
       :value thresholding_level_value
       :onchange "eww --no-daemonize update thresholding_level_value={}; eww-data-requester send gamma_level ${thresholding_level_value}"
       :hexpand true

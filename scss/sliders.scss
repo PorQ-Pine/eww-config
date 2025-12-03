@@ -50,20 +50,18 @@
 
     &.less {
         color: $black;
-    };
+    }
 
     &.more {
         color: $white;
-    };
+    }
 }
 
-// brightness
 .brightness-control-center {
     margin-top: 1rem;
     margin-right: 2.7rem;
 }
 
-// volume
 .volume-control-center {
     margin-top: 1rem;
 }
@@ -79,4 +77,21 @@
 .volume-slider-button {
     @include slider-button;
     padding-right: 0.8rem;
+}
+
+.treshold-scale trough {
+    background-color: $white;
+    border-radius: 1rem;
+    border: 0.2rem solid $black;
+    min-height: 1rem;
+}
+
+.treshold-scale trough highlight {
+    background-color: $black;
+    border-radius: 1rem;
+}
+
+.treshold-scale slider {
+    background-color: $black;
+    border-radius: 1rem;
 }
