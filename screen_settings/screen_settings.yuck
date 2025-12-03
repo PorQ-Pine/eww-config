@@ -147,7 +147,8 @@
 
 (defwidget tresholding_level_selector []
   (box
-    :visible {thresholding_level}
+    ;:visible {thresholding_level}
+    :visible {false} ; Doesn't work yet ;/
     :class "settings-group"
     :orientation "v"
     :spacing 5
