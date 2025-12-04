@@ -16,7 +16,8 @@
 (defvar conversion_dithering false)
 
 (defvar thresholding_level true)
-(defvar thresholding_level_value 10)
+(defvar thresholding_level_value 39)
+(defvar thresholding_level_value_real 7)
 
 (defvar redraw true)
 (defvar redraw_fast_drawing true)
@@ -150,20 +151,19 @@
 
 (defwidget tresholding_level_selector []
   (box
-    ;:visible {thresholding_level}
-    :visible {false} ; Doesn't work yet ;/
+    :visible {thresholding_level}
     :class "settings-group"
     :orientation "v"
     :spacing 5
     :space-evenly false
-    (label :text "Threshold Level: ${thresholding_level_value}" :class "settings-section-label")
+    (label :text "Threshold Level: ${thresholding_level_value_real}" :class "settings-section-label")
     (box
       :orientation "h"
       :space-evenly false
       :spacing 5
       (button
         :class "selection-button-small"
-        :onclick "eww --no-daemonize update thresholding_level_value=$((${thresholding_level_value} == 1 ? 1 : ${thresholding_level_value} - 1)); eww-data-requester send gamma_update"
+        :onclick "eww --no-daemonize update thresholding_level_value=$((${thresholding_level_value} == 1 ? 1 : ${thresholding_level_value} - 1)); eww-data-requester send small_screen_settings"
         "-"
       )
       (scale
@@ -171,18 +171,18 @@
         :min 1
         :max 101
         :value thresholding_level_value
-        :onchange "eww --no-daemonize update thresholding_level_value={}; eww-data-requester send gamma_update"
+        :onchange "eww --no-daemonize update thresholding_level_value={}; eww-data-requester send small_screen_settings"
         :hexpand true
       )
       (button
         :class "selection-button-small"
-        :onclick "eww --no-daemonize update thresholding_level_value=$((${thresholding_level_value} == 100 ? 100 : ${thresholding_level_value} + 1)); eww-data-requester send gamma_update"
+        :onclick "eww --no-daemonize update thresholding_level_value=$((${thresholding_level_value} == 100 ? 100 : ${thresholding_level_value} + 1)); eww-data-requester send small_screen_settings"
         "+"
       )
     )
     (button
       :class "selection-button"
-      :onclick "eww --no-daemonize update thresholding_level_value=10; eww-data-requester send gamma_update"
+      :onclick "eww --no-daemonize update thresholding_level_value=10; eww-data-requester send small_screen_settings"
       "Reset"
     )
   )
@@ -202,7 +202,7 @@
       :spacing 5
       (button
         :class "selection-button-small"
-        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 1 ? 1 : ${redraw_level_value} - 1)); eww-data-requester send screen_settings"
+        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 1 ? 1 : ${redraw_level_value} - 1)); eww-data-requester send small_screen_settings"
         "-"
       )
       (scale
@@ -210,18 +210,18 @@
         :min 1
         :max 101
         :value redraw_level_value
-        :onchange "eww --no-daemonize update redraw_level_value={}; eww-data-requester send screen_settings"
+        :onchange "eww --no-daemonize update redraw_level_value={}; eww-data-requester send small_screen_settings"
         :hexpand true
       )
       (button
         :class "selection-button-small"
-        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 100 ? 100 : ${redraw_level_value} + 1)); eww-data-requester send screen_settings"
+        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 100 ? 100 : ${redraw_level_value} + 1)); eww-data-requester send small_screen_settings"
         "+"
       )
     )
     (button
       :class "selection-button"
-      :onclick "eww --no-daemonize update redraw_level_value=10; eww-data-requester send screen_settings"
+      :onclick "eww --no-daemonize update redraw_level_value=10; eww-data-requester send small_screen_settings"
       "Reset"
     )
   )
@@ -267,7 +267,7 @@
       :orientation "v"
       :space-evenly false
       :spacing 5
-      (button :onclick "eww --no-daemonize close screen_settings" :class "close-button-simple" "Close")
+      (button :onclick "eww --no-daemonize close screen_settings; eww-data-requester send refresh" :class "close-button-simple" "Close")
       (driver_mode_selector)
       (dithering_selector)
       (bitdepth_selector)
