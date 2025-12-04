@@ -22,6 +22,9 @@
 (defvar redraw_fast_drawing true)
 (defvar redraw_disabled false)
 
+(defvar redraw_level true)
+(defvar redraw_level_value 25)
+
 (defwidget driver_mode_selector []
   (box
     :class "settings-group"
@@ -185,6 +188,45 @@
   )
 )
 
+(defwidget redraw_level_selector []
+  (box
+    :visible {redraw_level}
+    :class "settings-group"
+    :orientation "v"
+    :spacing 5
+    :space-evenly false
+    (label :text "Redraw delay: ${redraw_level_value}" :class "settings-section-label")
+    (box
+      :orientation "h"
+      :space-evenly false
+      :spacing 5
+      (button
+        :class "selection-button-small"
+        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 1 ? 1 : ${redraw_level_value} - 1)); eww-data-requester send gamma_update"
+        "-"
+      )
+      (scale
+        :class "treshold-scale"
+        :min 1
+        :max 101
+        :value redraw_level_value
+        :onchange "eww --no-daemonize update redraw_level_value={}; eww-data-requester send gamma_update"
+        :hexpand true
+      )
+      (button
+        :class "selection-button-small"
+        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 100 ? 100 : ${redraw_level_value} + 1)); eww-data-requester send gamma_update"
+        "+"
+      )
+    )
+    (button
+      :class "selection-button"
+      :onclick "eww --no-daemonize update redraw_level_value=10; eww-data-requester send gamma_update"
+      "Reset"
+    )
+  )
+)
+
 (defwidget redraw_selector []
   (box
     :visible {redraw}
@@ -232,6 +274,7 @@
       (conversion_selector)
       (tresholding_level_selector)
       (redraw_selector)
+      (redraw_level_selector)
     )
   )
 )
