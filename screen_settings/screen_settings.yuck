@@ -195,14 +195,14 @@
     :orientation "v"
     :spacing 5
     :space-evenly false
-    (label :text "Redraw delay: ${redraw_level_value}" :class "settings-section-label")
+    (label :text "Redraw delay: ${redraw_level_value}%" :class "settings-section-label")
     (box
       :orientation "h"
       :space-evenly false
       :spacing 5
       (button
         :class "selection-button-small"
-        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 1 ? 1 : ${redraw_level_value} - 1)); eww-data-requester send gamma_update"
+        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 1 ? 1 : ${redraw_level_value} - 1)); eww-data-requester send screen_settings"
         "-"
       )
       (scale
@@ -210,18 +210,18 @@
         :min 1
         :max 101
         :value redraw_level_value
-        :onchange "eww --no-daemonize update redraw_level_value={}; eww-data-requester send gamma_update"
+        :onchange "eww --no-daemonize update redraw_level_value={}; eww-data-requester send screen_settings"
         :hexpand true
       )
       (button
         :class "selection-button-small"
-        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 100 ? 100 : ${redraw_level_value} + 1)); eww-data-requester send gamma_update"
+        :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 100 ? 100 : ${redraw_level_value} + 1)); eww-data-requester send screen_settings"
         "+"
       )
     )
     (button
       :class "selection-button"
-      :onclick "eww --no-daemonize update redraw_level_value=10; eww-data-requester send gamma_update"
+      :onclick "eww --no-daemonize update redraw_level_value=10; eww-data-requester send screen_settings"
       "Reset"
     )
   )
