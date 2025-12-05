@@ -3,23 +3,26 @@
 }
 
 .settings-section-label {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   font-weight: bold;
   color: $black;
+  padding: 0.1rem;
+  margin: 0.1rem;
 }
 
 .settings-group {
   background-color: transparent;
-  margin-top: 0.25rem;
+  margin-top: 0.1rem;
+  padding-top: 0.1rem;
   border-color: $black;
   border-width: 0.2rem;
   border-style: solid;
   border-radius: 1.5rem;
-  padding: 0.60rem;
+  padding: 0.30rem;
 }
 
 .selection-button {
-  padding: 0.75rem 1.25rem;
+  padding: 0.35rem 1.25rem;
   border-radius: 1.5rem;
   background-color: $white;
   color: $black;
@@ -35,7 +38,7 @@
 }
 
 .close-button-simple {
-  padding: 0.75rem 1.25rem;
+  padding: 0.35rem 1.25rem;
   border-radius: 1.5rem;
   background-color: $white;
   color: $black;
@@ -52,7 +55,7 @@
 
 .selection-button-small {
   padding: 0.5rem 1rem;
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   border-radius: 0.5rem;
   background-color: $white;
   color: $black;

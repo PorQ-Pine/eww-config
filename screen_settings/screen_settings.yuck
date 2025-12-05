@@ -172,7 +172,7 @@
     )
     (button
       :class "selection-button"
-      :onclick "eww --no-daemonize update thresholding_level_value=10; eww-data-requester send small_screen_settings"
+      :onclick "eww --no-daemonize update thresholding_level_value=39; eww-data-requester send small_screen_settings"
       "Reset"
     )
   )
