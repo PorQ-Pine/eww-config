@@ -87,36 +87,38 @@
     
     ; Hidden listeners to keep deflistens active
     (box :visible false
-      (label :text "${battery_status_text}")
-      (label :text "${battery_percentage_num}")
-      (label :text "${notifications_data}")
-      (label :text "${network}")
-      (label :text "${bluetooth}")
-      (label :text "${volume}")
-      (label :text "${brightness_cool}")
-      (label :text "${brightness_warm}")
-      (label :text "${mpris}")
-      (label :text "${driver_normal_mode}")
-      (label :text "${driver_fast_mode}")
-      (label :text "${dithering}")
-      (label :text "${dithering_bayer}")
-      (label :text "${dithering_bluenoise16}")
-      (label :text "${dithering_bluenoise32}")
-      (label :text "${bitdepth}")
-      (label :text "${bitdepth_y1}")
-      (label :text "${bitdepth_y2}")
-      (label :text "${bitdepth_y4}")
-      (label :text "${conversion}")
-      (label :text "${conversion_tresholding}")
-      (label :text "${conversion_dithering}")
-      (label :text "${redraw}")
-      (label :text "${redraw_fast_drawing}")
-      (label :text "${redraw_disabled}")
-      (label :text "${thresholding_level}")
-      (label :text "${thresholding_level_value}")
-      (label :text "${thresholding_level_value_real}")
-      (label :text "${redraw_level}")
-      (label :text "${redraw_level_value}")
+      (label :text
+        "${battery_status_text}"
+        "${battery_percentage_num}"
+        "${notifications_data}"
+        "${network}"
+        "${bluetooth}"
+        "${volume}"
+        "${brightness_cool}"
+        "${brightness_warm}"
+        "${mpris}"
+        "${driver_normal_mode}"
+        "${driver_fast_mode}"
+        "${dithering}"
+        "${dithering_bayer}"
+        "${dithering_bluenoise16}"
+        "${dithering_bluenoise32}"
+        "${bitdepth}"
+        "${bitdepth_y1}"
+        "${bitdepth_y2}"
+        "${bitdepth_y4}"
+        "${conversion}"
+        "${conversion_tresholding}"
+        "${conversion_dithering}"
+        "${redraw}"
+        "${redraw_fast_drawing}"
+        "${redraw_disabled}"
+        "${thresholding_level}"
+        "${thresholding_level_value}"
+        "${thresholding_level_value_real}"
+        "${redraw_level}"
+        "${redraw_level_value}"
+      )
     )
     
     ;; left
