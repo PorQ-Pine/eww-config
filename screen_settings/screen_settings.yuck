@@ -15,7 +15,7 @@
 (defvar conversion_tresholding true)
 (defvar conversion_dithering false)
 
-(defvar thresholding_level true)
+(defvar thresholding_level false)
 (defvar thresholding_level_value 39)
 (defvar thresholding_level_value_real 7)
 
@@ -161,11 +161,6 @@
       :orientation "h"
       :space-evenly false
       :spacing 5
-      (button
-        :class "selection-button-small"
-        :onclick "eww --no-daemonize update thresholding_level_value=$((${thresholding_level_value} == 1 ? 1 : ${thresholding_level_value} - 1)); eww-data-requester send small_screen_settings"
-        "-"
-      )
       (scale
         :class "treshold-scale"
         :min 1
@@ -173,11 +168,6 @@
         :value thresholding_level_value
         :onchange "eww --no-daemonize update thresholding_level_value={}; eww-data-requester send small_screen_settings"
         :hexpand true
-      )
-      (button
-        :class "selection-button-small"
-        :onclick "eww --no-daemonize update thresholding_level_value=$((${thresholding_level_value} == 100 ? 100 : ${thresholding_level_value} + 1)); eww-data-requester send small_screen_settings"
-        "+"
       )
     )
     (button
