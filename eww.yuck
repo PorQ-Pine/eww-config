@@ -112,6 +112,11 @@
       (label :text "${redraw}")
       (label :text "${redraw_fast_drawing}")
       (label :text "${redraw_disabled}")
+      (label :text "${thresholding_level}")
+      (label :text "${thresholding_level_value}")
+      (label :text "${thresholding_level_value_real}")
+      (label :text "${redraw_level}")
+      (label :text "${redraw_level_value}")
     )
     
     ;; left
