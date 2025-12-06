@@ -20,10 +20,10 @@
 (defvar thresholding_level_value_real 7)
 
 (defvar redraw true)
-(defvar redraw_fast_drawing true)
-(defvar redraw_disabled false)
+(defvar redraw_fast_drawing false)
+(defvar redraw_disabled true)
 
-(defvar redraw_level true)
+(defvar redraw_level false)
 (defvar redraw_level_value 25)
 
 (defwidget driver_mode_selector []
