@@ -22,6 +22,8 @@
         :timeout "1000" :class "window-action-button" :onclick "niri msg action close-window & eww --no-daemonize close window_menu" "Close window")
       (button
         :timeout "1000" :class "window-action-button" :onclick "niri msg action toggle-overview & eww --no-daemonize close window_menu" "Toggle overlay")
+      (button
+        :timeout "1000" :class "window-action-button" :onclick "niri msg action maximize-window-to-edges & eww --no-daemonize close window_menu" "Fit window")
     )
   )
 )
