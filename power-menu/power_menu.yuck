@@ -12,11 +12,11 @@
     (powermenu_entry    :label "Power off"
       :timeout 2000
       :icon "󰐥"
-    :onclick "sudo poweroff & eww --no-daemonize close power_menu")
+    :onclick "/opt/qoms/send_qoms send poweroff & eww --no-daemonize close power_menu")
     (powermenu_entry    :label "Reboot"
       :timeout 2000
       :icon "󰜉"
-    :onclick "sudo reboot now & eww --no-daemonize close power_menu")
+    :onclick "/opt/qoms/send_qoms send reboot & eww --no-daemonize close power_menu")
     ;(powermenu_entry    :label "Lock"
       ;  :icon ""
     ;:onclick "")
