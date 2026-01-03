@@ -20,12 +20,11 @@
     ;(powermenu_entry    :label "Lock"
       ;  :icon ""
     ;:onclick "")
-    ;(powermenu_entry    :label "Sign out"
-      ;  :icon "󰗼"
-    ;:onclick "")
+    (powermenu_entry    :label "Sign out"
+      :icon "󰗼"
+    :onclick "/opt/qoms/send_qoms send relogin & eww --no-daemonize close power_menu")
     (powermenu_entry    :label "Cancel"
       :icon "󰅖"
     :onclick "eww --no-daemonize close power_menu")
-    
   )
 )
