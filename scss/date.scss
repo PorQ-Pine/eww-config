@@ -18,8 +18,8 @@ window.date {
 
   .time-container {
     .content {
-      font-family: 'Noto Sans';
-      font-weight: bolder;
+      font-family: sans-serif;
+      font-weight: 900;
       font-size: 60px;
       color: $black;
     }
@@ -32,14 +32,14 @@ window.date {
   }
 
   .date-container {
-    font-family: 'Noto Sans';
+    font-family: sans-serif;
     margin-top: 2px;
     color: $black;
   }
 }
 
 .cal-box {
-  font-family: 'Noto Sans';
+  font-family: sans-serif;
   background-color: $white;
   border-radius: 4px;
   padding: 0 1rem .2rem;

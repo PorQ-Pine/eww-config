@@ -53,14 +53,16 @@
 
 .notifications-scroll {
     min-height: 15rem;
-    margin-top: 1rem;
+    margin-top: 0rem;
 }
 
 .notifications-clear-button {
     background-color: $white;
     color: $black;
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
     border-radius: 1rem;
+    font-family: sans-serif;
+    font-style: italic;
 }
 
 .notification-close-button {

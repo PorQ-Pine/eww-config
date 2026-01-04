@@ -10,7 +10,7 @@
         (label :class "user-clock-separator" :text "|")
         (label :class "user-clock-date" :text {formattime(EWW_TIME, "%a, %b %d")})
       )
-      (label :class "user-uptime" :text "uptime: ${uptime}")
+      (label :class "user-uptime" :text "Uptime: ${uptime}")
     )
   )
 )

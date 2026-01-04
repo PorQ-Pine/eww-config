@@ -26,6 +26,11 @@
     margin-top: 1rem;
 }
 
+.quick-settings-text {
+    font-family: sans-serif;
+    font-weight: 900;
+}
+
 .quick-settings-icon {
     font-size: 1.3rem;
 }
@@ -36,6 +41,9 @@
 
 .quick-settings-state {
     font-size: 0.9rem;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 500;
     color: $black;
 }
 

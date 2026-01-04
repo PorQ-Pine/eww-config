@@ -23,15 +23,17 @@
                 :wrap true
                 :wrap-mode "wordchar"
                 :lines 2
-                :justify "center"
+                :justify "left"
                 :width 100
+		:halign "start"
               )
               (label :text {notify.body} :class "notification-body"
-                :wrap true
+		:halign "start"
+		:wrap true
                 :wrap-mode "wordchar"
                 :lines 2
                 :width 100
-                :justify "center"
+                :justify "left"
                 :visible {notify.body != ""})
             )
             (box :orientation "v" :width 55 :height 55 :vexpand false :valign "center"
