@@ -1,5 +1,4 @@
 .indicator-date-wrapper {
-    /* rounds the outer corners */
     background-color: $black;
 }
 
@@ -15,10 +14,10 @@
 }
 
 .date-indicator {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     background-color: $black;
-    padding: 0 0.5rem;
-    margin: 0;
+    padding-left: 0rem;
+    padding-right: 0.75rem;
 }
 
 .date-indicator-text {
@@ -49,7 +48,13 @@
 .indicator-bat-icon {
     margin: 0 0rem;
     padding-right: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+}
+
+.indicator-bat-charging-icon {
+    margin: 0 0rem;
+    padding-right: 1rem;
+    font-size: 1.2rem;
 }
 
 .indicator-dnd-icon {
@@ -73,6 +78,11 @@
 
 .icon-text {
     margin: 0 0.2rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-family: monospace;
+}
+
+.icon-text-charging {
+    font-size: 1rem;
     font-family: monospace;
 }

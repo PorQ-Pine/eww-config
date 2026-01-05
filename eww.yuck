@@ -216,7 +216,7 @@
   )
 )
 
-; Date callendar
+; Date calendar
 (defwidget date-indicator []
   (button
     :class "date-indicator"
@@ -233,7 +233,7 @@
     (eventbox :onclick "eww-data-requester send settingsmenu"
       :class "indicator"
       (box :orientation "h" :space-evenly false :spacing 2
-        (box :orientation "h" :space-evenly false :spacing 2 :class "indicator-icons"
+        (box :orientation "h" :space-evenly false :spacing 1 :class "indicator-icons"
           (volume_icon)
           (network_icon)
           (battery_icon))
@@ -257,12 +257,12 @@
 
 (defwidget battery_icon []
   (box :visible {battery_status_text == "" ? false : true}
-    :class "indicator-bat-icon"
+    :class {battery_status_text == "Charging" ? "indicator-bat-charging-icon" : "indicator-bat-icon"}
     (label
       :text {battery_status_text == "Charging" ? "" : battery_percentage_num > 90 ? "" : battery_percentage_num > 75 ? "" : battery_percentage_num > 50 ? "" : battery_percentage_num > 25 ? "" : ""}
     )
     (label
-      :class "icon-text"
+      :class {battery_status_text == "Charging" ? "icon-text-charging" : "icon-text"}
       :text {battery_percentage_num + "%"}
     )
   )

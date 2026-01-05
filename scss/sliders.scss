@@ -52,6 +52,19 @@
     }
 }
 
+.smaller-scale-icon {
+    margin-left: 1rem;
+    font-size: 1.35rem;
+
+    &.less {
+        color: $black;
+    }
+
+    &.more {
+        color: $white;
+    }
+}
+
 .brightness-control-center {
     margin-top: 1rem;
 }

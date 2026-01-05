@@ -16,13 +16,14 @@
 .window-arrow-button {
   background-color: $white;
   color: $black;
-  font-size: 4rem;
+  font-size: 3.1rem;
   border-color: $black;
   border-width: 0.2rem;
   border-style: solid;
   min-height: 4rem;
   margin-right: 0.3rem;
   margin-left: 0.3rem;
+  border-radius: 3rem;
 }
 
 .window-action-button {
