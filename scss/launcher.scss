@@ -1,11 +1,20 @@
 .launcher {
   background-color: $white;
   color: $black;
-  border-radius: 1rem;
   padding: 0 0.8rem;
-  border: 0.2rem solid $black;
 }
 
 .launcher:active {
   background-color: $black;
+}
+
+.launcher-wrapper {
+  background-color: $white;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  border-color: $black;
+  border-width: 0.15rem;
+  border-style: solid;
 }

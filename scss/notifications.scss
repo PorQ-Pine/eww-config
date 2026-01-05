@@ -11,7 +11,6 @@
     border-color: $black;
     border-width: 0.2rem;
     border-style: solid;
-    border-radius: 1rem;
     margin-top: 1rem;
 }
 
@@ -29,7 +28,6 @@
     background-size: contain;
     background-position: center;
     min-width: 10rem;
-    border-radius: 1rem;
     margin: 0.5rem;
 }
 
@@ -60,7 +58,6 @@
     background-color: $white;
     color: $black;
     padding: 0rem 1rem;
-    border-radius: 1rem;
     font-family: sans-serif;
     font-style: italic;
 }
@@ -69,7 +66,6 @@
     background-color: $white;
     color: $black;
     padding: 0.5rem 0.5rem;
-    border-radius: 1rem;
     margin: 1rem;
 }
 
@@ -81,7 +77,6 @@
     color: $idk;
     padding: 0 0.5rem;
     margin: 0 0.25rem;
-    border-radius: 0.25rem;
 }
 
 .notification-action-box {

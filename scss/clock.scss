@@ -1,5 +1,4 @@
 .clock {
-    border-radius: 1rem;
     padding: 0 0.5rem 0 0;
     margin: 0 0 0 0.7rem;
     font-size: 1.5rem;
@@ -10,7 +9,6 @@
     @include window;
     margin-top: 20rem;
     margin-right: 20rem;
-    border-radius: 2rem;
 }
 
 .big_clock_label {

@@ -122,14 +122,14 @@
     )
     
     ;; left
-    (box :halign "start" :orientation "h" :space-evenly false :spacing 2
-      (launcher)
-      (virtualkeyboard)
-      (windowing_button)
-      
-      (refresh_button)
+    (box :orientation "h" :space-evenly false :spacing 2 :class "launcher-wrapper"
+      (box :halign "start" :orientation "h" :space-evenly false :spacing 2
+        (launcher)
+        (virtualkeyboard)
+        (windowing_button)
+        (refresh_button)
+      )
     )
-    
     ;; center
     (taskbar)
     

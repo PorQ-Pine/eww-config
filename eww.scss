@@ -4,6 +4,7 @@
     font-weight: bold;
     box-shadow: none;
     background-clip: padding-box;
+    border-radius: 1.5rem;
     -gtk-icon-source: builtin;
     -gtk-icon-palette: default;
 }
@@ -32,3 +33,4 @@ window,
 @import "scss/launcher.scss";
 @import "scss/power_menu.scss";
 @import "scss/screen_settings.scss";
+@import "scss/separator.scss";

@@ -1,12 +1,10 @@
 .indicator-date-wrapper {
-    border-radius: 1rem;
     /* rounds the outer corners */
     background-color: $black;
 }
 
 .indicator {
     background-color: $black;
-    border-radius: 1rem;
     padding: 0 0.5rem;
     margin-right: 0;
 }
@@ -19,7 +17,6 @@
 .date-indicator {
     font-size: 0.85rem;
     background-color: $black;
-    border-radius: 1rem;
     padding: 0 0.5rem;
     margin: 0;
 }
@@ -30,7 +27,6 @@
 }
 
 .indicator-icons {
-    border-radius: 1rem;
     padding: 0rem 0rem;
     margin: 0 0rem;
     background-color: $white;

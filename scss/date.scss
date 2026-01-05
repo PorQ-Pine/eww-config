@@ -41,7 +41,6 @@ window.date {
 .cal-box {
   font-family: sans-serif;
   background-color: $white;
-  border-radius: 4px;
   padding: 0 1rem .2rem;
   color: $black;
   margin: 0px 12px 12px 12px;
@@ -73,5 +72,4 @@ calendar:indeterminate {
 calendar.today {
   background-color: $white;
   color: $black;
-  border-radius: 5px;
 }

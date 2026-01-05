@@ -1,7 +1,6 @@
 .quick_settings_button {
     background-color: $white;
     color: $black;
-    border-radius: 1.5rem;
     padding: 0.75rem;
     font-size: 1.05rem;
     border-color: $black;
@@ -48,25 +47,25 @@
 }
 
 .quick-settings-state-enabled {
-    color: $black;
+    color: $white;
 }
 
 .left-top-plite {
-    margin-right: 0.45rem;
+    margin-right: 0.3rem;
     margin-bottom: 0.25rem;
 }
 
 .left-bottom-plite {
-    margin-right: 0.45rem;
+    margin-right: 0.3rem;
     margin-top: 0.45rem;
 }
 
 .right-top-plite {
-    margin-left: 0.45rem;
+    margin-left: 0.3rem;
     margin-bottom: 0.25rem;
 }
 
 .right-bottom-plite {
-    margin-left: 0.45rem;
+    margin-left: 0.3rem;
     margin-top: 0.45rem;
 }
