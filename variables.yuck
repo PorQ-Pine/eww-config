@@ -37,3 +37,8 @@
 
 (deflisten mpris :initial "{}"
 "eww-data-requester listen player")
+
+; Because EWW_TIME updates every sec, which triggers damage tracking for niri, not efficient
+; This is self correcting, so it will work with sleep support later
+(deflisten time :initial "00:00"
+  "bash -c 'while true; do date +%H:%M; sleep $((60 - $(date +%-S))); done'")
