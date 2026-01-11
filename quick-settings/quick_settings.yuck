@@ -63,7 +63,7 @@
 )
 
 (defwidget network []
-  (quick_settings_button  :condition {network.essid == "lo"}
+  (quick_settings_button :condition {network.enabled == false}
     :action {network.essid != "lo"
     ? "bash -c 'rfkill block wlan' >/dev/null 2>&1"
     : "bash -c 'rfkill unblock wlan' >/dev/null 2>&1"}
