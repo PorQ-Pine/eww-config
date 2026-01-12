@@ -75,7 +75,7 @@
     network.signal < 50 ? "󰤢" :
     network.signal < 75 ? "󰤥" : "󰤨"
     }
-    :label {network.essid == "lo" ? "Not connected" : network.essid}
+    :label {network.essid == "lo" ? "Not connected  " : network.essid}
     :class "left-top-plite"
   )
 )
