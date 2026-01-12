@@ -22,9 +22,9 @@
 (defwindow date
   :monitor '["0"]'
   :stacking "overlay"
-  :geometry (geometry :x "0px"
-    :y "20px"
-  :anchor "center top")
+  :geometry (geometry :x "7.5px"
+    :y "7.5px"
+  :anchor "top right")
   :namespace "eww"
   (date))
 
