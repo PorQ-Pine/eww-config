@@ -70,7 +70,7 @@
     :icon {
     network.essid =~ "Wired" ? "󰈀" :  ;; wired icon
     network.essid == "lo" ? "󰤭" :
-    network.signal == "" ? "󰖩" :
+    network.signal == "" ? "󱗿" :
     network.signal < 25 ? "󰤟" :
     network.signal < 50 ? "󰤢" :
     network.signal < 75 ? "󰤥" : "󰤨"
