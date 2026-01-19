@@ -1,3 +1,5 @@
+(defvar show_more_actions false)
+
 (defwidget window_menu []
   (box
     :class "control-center"
@@ -5,27 +7,67 @@
     :space-evenly false
     :halign "end"
     :valign "start"
+    (label :text "Switch windows" :class "window-navigation-text")
     (box
       :class "window-navigation"
       :orientation "h"
       :space-evenly true
       (button
-        :timeout "1000" :class "window-arrow-button" :onclick "niri msg action focus-column-left" "")
+      :timeout "1000" :class "window-arrow-button" :onclick "niri msg action focus-column-left" "")
       (button
-        :timeout "1000" :class "window-arrow-button" :onclick "niri msg action focus-column-right" "")
+      :timeout "1000" :class "window-arrow-button" :onclick "niri msg action focus-column-right" "")
     )
     (box
-      :class "window-actions"
       :orientation "v"
       :space-evenly false
       (button
-        :timeout "1000" :class "window-action-button" :onclick "niri msg action close-window & eww --no-daemonize close window_menu" "Close window")
+      :timeout "1000" :class "window-action-button" :onclick "niri msg action close-window & eww --no-daemonize close window_menu" "Close window")
       (button
-        :timeout "1000" :class "window-action-button" :onclick "kill -9 \"$(niri msg focused-window | awk \'/PID:/ {print $2}\')\" & eww --no-daemonize close window_menu" "Force close window")
-      (button
-        :timeout "1000" :class "window-action-button" :onclick "niri msg action toggle-overview & eww --no-daemonize close window_menu" "Toggle overlay")
-      (button
-        :timeout "1000" :class "window-action-button" :onclick "niri msg action maximize-window-to-edges & eww --no-daemonize close window_menu" "Fit window")
+      :timeout "1000" :class "window-action-button" :onclick "niri msg action maximize-window-to-edges & eww --no-daemonize close window_menu" "Fit window")
+      (button :timeout "1000" :class "window-more-button"
+      :onclick "eww --no-daemonize update show_more_actions=${show_more_actions ? false : true}" "${show_more_actions ? "Less" : "More"}")
+      (revealer
+        :transition "none"
+        :reveal show_more_actions
+        (box
+          :orientation "v"
+          :space-evenly false
+          (box
+            :orientation "v"
+            :class "window-navigation-box"
+            :space-evenly false
+            (label :text "Move window" :class "window-navigation-text")
+            (box
+              :class "window-navigation"
+              :orientation "h"
+              :space-evenly true
+              (button
+              :timeout "1000" :class "window-arrow-button" :onclick "niri msg action move-column-left" "")
+              (button
+              :timeout "1000" :class "window-arrow-button" :onclick "niri msg action move-column-right" "")
+            )
+          )
+          (box
+            :orientation "v"
+            :class "window-navigation-box"
+            :space-evenly false
+            (label :text "Resize window" :class "window-navigation-text")
+            (box
+              :class "window-navigation"
+              :orientation "h"
+              :space-evenly true
+              (button
+              :timeout "1000" :class "window-arrow-button" :onclick "niri msg action set-column-width -20%" "󰍴")
+              (button
+              :timeout "1000" :class "window-arrow-button" :onclick "niri msg action set-column-width +20%" "󰐕")
+            )
+          )
+          (button
+            :timeout "1000" :class "window-action-button" :onclick "kill -9 \"$(niri msg focused-window | awk \'/PID:/ {print $2}\')\" & eww --no-daemonize close window_menu" "Force close window")
+          (button
+          :timeout "1000" :class "window-action-button" :onclick "niri msg action toggle-overview & eww --no-daemonize close window_menu" "Toggle overlay")
+        )
+      )
     )
   )
 )
