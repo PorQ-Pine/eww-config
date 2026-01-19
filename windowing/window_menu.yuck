@@ -57,9 +57,9 @@
               :orientation "h"
               :space-evenly true
               (button
-              :timeout "1000" :class "window-arrow-button" :onclick "niri msg action set-column-width -20%" "󰍴")
+              :timeout "1000" :class "window-arrow-button" :onclick "niri msg action set-column-width -10%" "󰍴")
               (button
-              :timeout "1000" :class "window-arrow-button" :onclick "niri msg action set-column-width +20%" "󰐕")
+              :timeout "1000" :class "window-arrow-button" :onclick "niri msg action set-column-width +10%" "󰐕")
             )
           )
           (button
