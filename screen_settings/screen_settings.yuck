@@ -1,4 +1,4 @@
-(defvar per_window_settings false)
+(defvar per_window_settings true)
 
 (defvar driver_normal_mode true)
 (defvar driver_fast_mode false)
@@ -288,14 +288,20 @@
       :spacing 5
       (button :onclick "eww --no-daemonize close screen_settings; eww-data-requester send refresh" :class "close-button-simple" "Close")
       (per_window_settings_selector)
-      (label :text "Global settings" :class "settings-section-label")
-      (driver_mode_selector)
-      (dithering_selector)
-      (bitdepth_selector)
-      (conversion_selector)
-      (tresholding_level_selector)
-      (redraw_selector)
-      (redraw_level_selector)
+      (box
+        :orientation "v"
+        :space-evenly false
+        :spacing 5
+        :visible {per_window_settings == false}
+        (label :text "Global settings" :class "settings-section-label")
+        (driver_mode_selector)
+        (dithering_selector)
+        (bitdepth_selector)
+        (conversion_selector)
+        (tresholding_level_selector)
+        (redraw_selector)
+        (redraw_level_selector)
+      )
     )
   )
 )
