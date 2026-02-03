@@ -149,7 +149,7 @@
   (button
     :timeout timeout
     :class "launcher"
-    :onclick "cosmic-wandener-opener"
+    :onclick "cosmic-wanderer-opener"
     (image :path "other/quillos.svg" :image-width 24)
   )
 )
