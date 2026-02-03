@@ -14,7 +14,7 @@
 (defvar bitdepth_y4 false)
 
 (defvar conversion true)
-(defvar conversion_tresholding true)
+(defvar conversion_thresholding true)
 (defvar conversion_dithering false)
 
 (defvar thresholding_level false)
@@ -164,21 +164,21 @@
       :spacing 5
       (button
         :timeout timeout
-        :class "selection-button ${conversion_tresholding ? "active" : ""}"
-        :onclick "eww update conversion_tresholding=true conversion_dithering=false; eww-data-requester send screen_settings"
-        "Tresholding"
+        :class "selection-button ${conversion_thresholding ? "active" : ""}"
+        :onclick "eww update conversion_thresholding=true conversion_dithering=false; eww-data-requester send screen_settings"
+        "thresholding"
       )
       (button
         :timeout timeout
         :class "selection-button ${conversion_dithering ? "active" : ""}"
-        :onclick "eww update conversion_tresholding=false conversion_dithering=true; eww-data-requester send screen_settings"
+        :onclick "eww update conversion_thresholding=false conversion_dithering=true; eww-data-requester send screen_settings"
         "Dithering"
       )
     )
   )
 )
 
-(defwidget tresholding_level_selector []
+(defwidget thresholding_level_selector []
   (box
     :visible {thresholding_level}
     :class "settings-group"
@@ -191,7 +191,7 @@
       :space-evenly false
       :spacing 5
       (scale
-        :class "treshold-scale"
+        :class "threshold-scale"
         :min 1
         :max 101
         :value thresholding_level_value
@@ -227,7 +227,7 @@
         "-"
       )
       (scale
-        :class "treshold-scale"
+        :class "threshold-scale"
         :min 1
         :max 101
         :value redraw_level_value
@@ -302,7 +302,7 @@
         (dithering_selector)
         (bitdepth_selector)
         (conversion_selector)
-        (tresholding_level_selector)
+        (thresholding_level_selector)
         (redraw_selector)
         (redraw_level_selector)
       )

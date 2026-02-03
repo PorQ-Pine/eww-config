@@ -111,7 +111,7 @@
         ${bitdepth_y2}
         ${bitdepth_y4}
         ${conversion}
-        ${conversion_tresholding}
+        ${conversion_thresholding}
         ${conversion_dithering}
         ${redraw}
         ${redraw_fast_drawing}
