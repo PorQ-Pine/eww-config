@@ -149,7 +149,7 @@
   (button
     :timeout timeout
     :class "launcher"
-    :onclick {launcher_command}
+    :onclick "cosmic-wandener-opener"
     (image :path "other/quillos.svg" :image-width 24)
   )
 )
@@ -158,7 +158,7 @@
 (defwidget virtualkeyboard []
   (button
     :timeout timeout
-    :class "launcher" ; Using the same class for consistent styling
+    :class "launcher"
     :onclick "eww-data-requester send virtualkeyboard"
     (image :path "other/keyboard.svg" :image-width 24)
   )
