@@ -144,6 +144,7 @@
 ; App launcher
 (defwidget launcher []
   (button
+    :timeout timeout
     :class "launcher"
     :onclick {launcher_command}
     (image :path "other/quillos.svg" :image-width 24)
@@ -153,6 +154,7 @@
 ; Virtual Keyboard launcher
 (defwidget virtualkeyboard []
   (button
+    :timeout timeout
     :class "launcher" ; Using the same class for consistent styling
     :onclick "eww-data-requester send virtualkeyboard"
     (image :path "other/keyboard.svg" :image-width 24)
@@ -162,6 +164,7 @@
 ; Windowing menu button
 (defwidget windowing_button []
   (button
+    :timeout timeout
     :class "launcher"
     :onclick "eww --no-daemonize open window_menu --toggle"
     (image :path "other/select_window.svg" :image-width 24)
@@ -171,6 +174,7 @@
 ; Refresh button
 (defwidget refresh_button []
   (button
+    :timeout timeout
     :class "launcher"
     :onclick "eww-data-requester send refresh"
     (image :path "other/refresh.svg" :image-width 24)
@@ -195,6 +199,7 @@
           :class "workspace"
           (for app in {ws.windows}
             (button
+              :timeout timeout
               :class "app_item ${app.is_focused == true ? "active" : ""}"
               :onclick "niri msg action focus-window --id ${app.id}"
               :onmiddleclick "niri msg action close-window --id ${app.id}"
@@ -219,6 +224,7 @@
 ; Date calendar
 (defwidget date-indicator []
   (button
+    :timeout timeout
     :class "date-indicator"
     :onclick "eww --no-daemonize open date --toggle"
     (label :text {formattime(EWW_TIME, "%d.%m.20%y")}

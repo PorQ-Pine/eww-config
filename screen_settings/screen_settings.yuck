@@ -40,13 +40,13 @@
       :orientation "h"
       :spacing 5
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${per_window_settings ? "active" : ""}"
         :onclick "eww update per_window_settings=true; eww-data-requester send screen_settings"
         "On"
       )
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${per_window_settings ? "" : "active"}"
         :onclick "eww update per_window_settings=false; eww-data-requester send screen_settings"
         "Off"
@@ -67,13 +67,13 @@
       :orientation "h"
       :spacing 5
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${driver_normal_mode ? "active" : ""}"
         :onclick "eww update driver_normal_mode=true driver_fast_mode=false; eww-data-requester send screen_settings"
         "Normal"
       )
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${driver_fast_mode ? "active" : ""}"
         :onclick "eww update driver_normal_mode=false driver_fast_mode=true; eww-data-requester send screen_settings"
         "Fast"
@@ -95,19 +95,19 @@
       :orientation "h"
       :spacing 5
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${dithering_bayer ? "active" : ""}"
         :onclick "eww update dithering_bayer=true dithering_bluenoise16=false dithering_bluenoise32=false; eww-data-requester send screen_settings"
         "Bayer"
       )
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${dithering_bluenoise16 ? "active" : ""}"
         :onclick "eww update dithering_bayer=false dithering_bluenoise16=true dithering_bluenoise32=false; eww-data-requester send screen_settings"
         "BlueNoise16"
       )
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${dithering_bluenoise32 ? "active" : ""}"
         :onclick "eww update dithering_bayer=false dithering_bluenoise16=false dithering_bluenoise32=true; eww-data-requester send screen_settings"
         "BlueNoise32"
@@ -129,19 +129,19 @@
       :orientation "h"
       :spacing 5
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${bitdepth_y1 ? "active" : ""}"
         :onclick "eww update bitdepth_y1=true bitdepth_y2=false bitdepth_y4=false; eww-data-requester send screen_settings"
         "Y1"
       )
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${bitdepth_y2 ? "active" : ""}"
         :onclick "eww update bitdepth_y1=false bitdepth_y2=true bitdepth_y4=false; eww-data-requester send screen_settings"
         "Y2"
       )
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${bitdepth_y4 ? "active" : ""}"
         :onclick "eww update bitdepth_y1=false bitdepth_y2=false bitdepth_y4=true; eww-data-requester send screen_settings"
         "Y4"
@@ -163,13 +163,13 @@
       :orientation "h"
       :spacing 5
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${conversion_tresholding ? "active" : ""}"
         :onclick "eww update conversion_tresholding=true conversion_dithering=false; eww-data-requester send screen_settings"
         "Tresholding"
       )
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${conversion_dithering ? "active" : ""}"
         :onclick "eww update conversion_tresholding=false conversion_dithering=true; eww-data-requester send screen_settings"
         "Dithering"
@@ -200,6 +200,7 @@
       )
     )
     (button
+      :timeout timeout
       :class "selection-button"
       :onclick "eww --no-daemonize update thresholding_level_value=39; eww-data-requester send small_screen_settings"
       "Reset"
@@ -220,6 +221,7 @@
       :space-evenly false
       :spacing 5
       (button
+        :timeout timeout
         :class "selection-button-small"
         :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 1 ? 1 : ${redraw_level_value} - 1)); eww-data-requester send small_screen_settings"
         "-"
@@ -233,12 +235,14 @@
         :hexpand true
       )
       (button
+        :timeout timeout
         :class "selection-button-small"
         :onclick "eww --no-daemonize update redraw_level_value=$((${redraw_level_value} == 100 ? 100 : ${redraw_level_value} + 1)); eww-data-requester send small_screen_settings"
         "+"
       )
     )
     (button
+      :timeout timeout
       :class "selection-button"
       :onclick "eww --no-daemonize update redraw_level_value=39; eww-data-requester send small_screen_settings"
       "Reset"
@@ -259,13 +263,13 @@
       :orientation "h"
       :spacing 5
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${redraw_fast_drawing ? "active" : ""}"
         :onclick "eww update redraw_fast_drawing=true redraw_disabled=false; eww-data-requester send screen_settings"
         "Fast drawing"
       )
       (button
-        :timeout "1000"
+        :timeout timeout
         :class "selection-button ${redraw_disabled ? "active" : ""}"
         :onclick "eww update redraw_fast_drawing=false redraw_disabled=true; eww-data-requester send screen_settings"
         "Disabled"
@@ -286,7 +290,7 @@
       :orientation "v"
       :space-evenly false
       :spacing 5
-      (button :onclick "eww --no-daemonize close screen_settings; eww-data-requester send refresh" :class "close-button-simple" "Close")
+      (button :timeout timeout :onclick "eww --no-daemonize close screen_settings; eww-data-requester send refresh" :class "close-button-simple" "Close")
       (per_window_settings_selector)
       (box
         :orientation "v"

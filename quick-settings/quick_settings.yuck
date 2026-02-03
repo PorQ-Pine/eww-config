@@ -30,7 +30,7 @@
 )
 
 (defwidget quick_settings_button [condition action icon label class]
-  (button :onclick {action} :class {condition ? "quick_settings_button ${class}" : "quick_settings_button quick_settings_button_toggled ${class}"}
+  (button :timeout timeout :onclick {action} :class {condition ? "quick_settings_button ${class}" : "quick_settings_button quick_settings_button_toggled ${class}"}
     (box :orientation "h" :space-evenly false
       (box :orientation "h" :space-evenly false :halign "start"
         (label :class "quick-settings-icon" :text {icon})
@@ -48,7 +48,7 @@
 )
 
 (defwidget simple_quick_settings_button [action icon label class]
-  (button :onclick {action} :class "quick_settings_button ${class}"
+  (button :timeout timeout :onclick {action} :class "quick_settings_button ${class}"
     (box :orientation "h" :space-evenly false
       (box :orientation "h" :space-evenly false :halign "start"
         (label :class "quick-settings-icon" :text {icon})

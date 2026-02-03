@@ -14,9 +14,9 @@
                 )
             )
             (box :orientation "h" :space-evenly false :halign "center" :class "music-actions-box"
-                (button :class "music-action" :onclick "playerctl previous" "󰒮")
-                (button :class "music-action" :onclick "playerctl play-pause" {mpris.status == "Playing" ? "󰓛" : "󰐊"})
-                (button :class "music-action" :onclick "playerctl next" "󰒭")
+                (button :timeout timeout :class "music-action" :onclick "playerctl previous" "󰒮")
+                (button :timeout timeout :class "music-action" :onclick "playerctl play-pause" {mpris.status == "Playing" ? "󰓛" : "󰐊"})
+                (button :timeout timeout :class "music-action" :onclick "playerctl next" "󰒭")
             )
                     
         )

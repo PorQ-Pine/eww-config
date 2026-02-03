@@ -13,36 +13,36 @@
       :orientation "v"
       :spacing 5
       (box :orientation "h" :spacing 5
-        (button
+        (button :timeout timeout
           :class "selection-button ${current_governor == "conservative" ? "active" : ""}"
           :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo conservative > \"$i\"; done'"
           "conservative"
         )
-        (button
+        (button :timeout timeout
           :class "selection-button ${current_governor == "ondemand" ? "active" : ""}"
           :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo ondemand > \"$i\"; done'"
           "ondemand"
         )
       )
       (box :orientation "h" :spacing 5
-        (button
+        (button :timeout timeout
           :class "selection-button ${current_governor == "userspace" ? "active" : ""}"
           :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo userspace > \"$i\"; done'"
           "userspace"
         )
-        (button
+        (button :timeout timeout
           :class "selection-button ${current_governor == "powersave" ? "active" : ""}"
           :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo powersave > \"$i\"; done'"
           "powersave"
         )
       )
       (box :orientation "h" :spacing 5
-        (button
+        (button :timeout timeout
           :class "selection-button ${current_governor == "performance" ? "active" : ""}"
           :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo performance > \"$i\"; done'"
           "performance"
         )
-        (button
+        (button :timeout timeout
           :class "selection-button ${current_governor == "schedutil" ? "active" : ""}"
           :onclick "bash -c 'for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo schedutil > \"$i\"; done'"
           "schedutil"
@@ -59,7 +59,7 @@
     :space-evenly false
     :halign "end"
     :valign "start"
-    (button :onclick "eww --no-daemonize close performance_settings" :class "close-button-simple" "Close")
+    (button :timeout timeout :onclick "eww --no-daemonize close performance_settings" :class "close-button-simple" "Close")
     (governor_chooser)
     (cpu_core_usage)
     (ram_usage)

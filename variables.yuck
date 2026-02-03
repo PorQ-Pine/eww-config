@@ -1,5 +1,6 @@
-; YES VARS
+; CONST VARS
 (defvar launcher_command "nwg-drawer")
+(defvar timeout "2250")
 
 ; POLLS
 
