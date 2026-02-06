@@ -166,7 +166,7 @@
         :timeout timeout
         :class "selection-button ${conversion_thresholding ? "active" : ""}"
         :onclick "eww update conversion_thresholding=true conversion_dithering=false; eww-data-requester send screen_settings"
-        "thresholding"
+        "Thresholding"
       )
       (button
         :timeout timeout
