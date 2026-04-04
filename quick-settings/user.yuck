@@ -2,6 +2,7 @@
   (box :orientation "h" :space-evenly true :class "user-box"
     (box :orientation "h" :space-evenly false :halign "start"
       (button :timeout timeout :class "open-powermenu-button" :onclick "eww --no-daemonize open power_menu --toggle & eww --no-daemonize close control_center &" "󰐥")
+      (button :timeout timeout :class "open-orbit-button" :onclick "orbit toggle & eww --no-daemonize close control_center &" "󱤚")
       (box :orientation "h" :space-evenly false :class "user-image")
     )
     (box :orientation "v" :space-evenly false :halign "end"

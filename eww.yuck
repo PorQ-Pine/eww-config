@@ -243,10 +243,37 @@
       :class "indicator"
       (box :orientation "h" :space-evenly false :spacing 2
         (box :orientation "h" :space-evenly false :spacing 1 :class "indicator-icons"
+          (network_icon)
+          (bluetooth_icon)
           (volume_icon)
           (battery_icon))
         (clock)))
     (date-indicator)))
+
+(defwidget network_icon []
+  (label
+    :class "indicator-net-icon"
+    :text {
+    network.essid =~ "Wired" ? "󰈀" :  ;; wired icon
+    network.essid == "lo" ? "󰤭" :
+    network.signal == "" ? "󰖩" :
+    network.signal < 25 ? "󰤟" :
+    network.signal < 50 ? "󰤢" :
+    network.signal < 75 ? "󰤥" : "󰤨"
+    }
+  )
+)
+
+(defwidget bluetooth_icon []
+  (label
+    :class "indicator-bluetooth-icon"
+    :text {
+      bluetooth.on == false ? "󰂲" : ; Bluetooth disabled icon
+      bluetooth.name == ""  ? "󰂯" : ; Bluetooth on but disconnected
+      "󰂱"; Bluetooth connected
+    }
+  )
+)
 
 (defwidget battery_icon []
   (box :visible {battery_status_text == "" ? false : true}
