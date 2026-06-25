@@ -1,6 +1,5 @@
 (defvar per_window_settings true)
-(defvar screen_orientation 0)
-(defvar screen_orientation_no_lock true)
+(defvar screen_orientation 90)
 
 (defvar driver_normal_mode true)
 (defvar driver_fast_mode false)
@@ -63,7 +62,6 @@
     :orientation "v"
     :spacing 5
     :space-evenly false
-    :visible screen_orientation_no_lock
     (label :text "Screen orientation" :class "settings-section-label")
     (box
       :class "selection-buttons"
@@ -72,25 +70,25 @@
       (button
         :timeout timeout
         :class "selection-button ${screen_orientation == 0 ? "active" : ""}"
-        :onclick "niri msg output DPI-1 transform normal && eww update screen_orientation=0 && ./reload.sh"
+        :onclick "eww update screen_orientation=0; eww-data-requester send screen_settings"
         "0°"
       )
       (button
         :timeout timeout
         :class "selection-button ${screen_orientation == 90 ? "active" : ""}"
-        :onclick "niri msg output DPI-1 transform 90 && eww update screen_orientation=90 && ./reload.sh"
+        :onclick "eww update screen_orientation=90; eww-data-requester send screen_settings"
         "90°"
       )
       (button
         :timeout timeout
         :class "selection-button ${screen_orientation == 180 ? "active" : ""}"
-        :onclick "niri msg output DPI-1 transform 180 && eww update screen_orientation=180 && ./reload.sh"
+        :onclick "eww update screen_orientation=180; eww-data-requester send screen_settings"
         "180°"
       )
       (button
         :timeout timeout
         :class "selection-button ${screen_orientation == 270 ? "active" : ""}"
-        :onclick "niri msg output DPI-1 transform 270 && eww update screen_orientation=270 && ./reload.sh"
+        :onclick "eww update screen_orientation=270; eww-data-requester send screen_settings"
         "270°"
       )
     )
